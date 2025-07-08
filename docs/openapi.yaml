@@ -20,9 +20,16 @@ info:
 
     >
     [https://devrms.tableo.com/api/google-server/v3](https://devrms.tableo.com/api/google-server/v3)
-  version: 1.0.0
+  version: v0.0.1
+  contact:
+    name: Contact us
+    url: https://tableo.com/contact/
+    email: dev@tableo.com
 servers:
-  - url: http://{{url}}
+  - url: https://devrms.tableo.com
+    description: Sandbox environment server
+  - url: https://app.tableo.com
+    description: Production environment server
 components:
   securitySchemes:
     basicAuth:
@@ -167,7 +174,7 @@ paths:
                 type: object
               example:
                 status: serving
-  /api/google-server/v3/availabilities/{merchant_id}:
+  /api/google-server/v3/availabilities/ChIJrXobRBRRDhMRVDIWhzzmi38:
     get:
       tags:
         - google server
@@ -185,12 +192,6 @@ paths:
         **Return value**
 
         None.
-      parameters:
-        - name: merchant_id
-          in: path
-          schema:
-            type: string
-          required: true
       responses:
         '200':
           description: OK
@@ -640,7 +641,7 @@ paths:
                 slot:
                   confirmation_mode: CONFIRMATION_MODE_SYNCHRONOUS
                   duration_sec: '1800'
-                  merchant_id: '{{merchant_id}}'
+                  merchant_id: ChIJrXobRBRRDhMRVDIWhzzmi38
                   resources:
                     party_size: 2
                     room_id: '3'
@@ -814,7 +815,7 @@ paths:
             schema:
               type: object
               example:
-                merchant_id: '{{merchant_id}}'
+                merchant_id: ChIJrXobRBRRDhMRVDIWhzzmi38
                 slot_time:
                   - duration_sec: '1800'
                     resource_ids:
@@ -1056,7 +1057,7 @@ paths:
             schema:
               type: object
               example:
-                merchant_id: '{{merchant_id}}'
+                merchant_id: ChIJrXobRBRRDhMRVDIWhzzmi38
                 slot_time:
                   - duration_sec: '5400'
                     resource_ids:
@@ -1530,7 +1531,7 @@ paths:
           in: query
           schema:
             type: string
-          example: '{{merchant_id}}'
+          example: ChIJrXobRBRRDhMRVDIWhzzmi38
       responses:
         '200':
           description: OK

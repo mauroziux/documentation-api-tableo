@@ -1,0 +1,25 @@
+{
+  "info": {
+    "version": "v0.0.1",
+    "contact": {
+      "name": "Contact us",
+      "url": "https://tableo.com/contact/",
+      "email": "dev@tableo.com"
+    }
+  },
+  "servers": [
+    {
+      "url": "https://devrms.tableo.com",
+      "description": "Sandbox environment server"
+    },
+    {
+      "url": "https://app.tableo.com",
+      "description": "Production environment server"
+    }
+  ],
+  "additionalVars": {
+    "url": "http://mauricio.com"
+  },
+  "replaceVars": true,
+  "components": {}
+}

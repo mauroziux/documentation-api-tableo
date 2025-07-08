@@ -4,7 +4,7 @@
   "description": "API documentation for Tableo built with Swagger UI",
   "main": "index.html",
   "scripts": {
-    "build": "bun p2o src/postman_collection.json -f docs/openapi.yaml",
+    "build": "bun p2o src/postman_collection.json -f docs/openapi.yaml -o src/options.json",
     "serve": "npx http-server docs -p 800",
     "test": "node test-setup.js",
     "deploy": "gh-pages -d docs"
