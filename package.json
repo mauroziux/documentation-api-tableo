@@ -1,0 +1,32 @@
+{
+  "name": "documentation-api-tableo",
+  "version": "1.0.0",
+  "description": "API documentation for Tableo built with Swagger UI",
+  "main": "index.html",
+  "scripts": {
+    "build": "bun p2o src/postman_collection.json -f docs/openapi.yaml",
+    "serve": "npx http-server docs -p 800",
+    "test": "node test-setup.js",
+    "deploy": "gh-pages -d docs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yourusername/documentation-api-tableo.git"
+  },
+  "keywords": [
+    "api",
+    "documentation",
+    "swagger",
+    "openapi",
+    "tableo"
+  ],
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/yourusername/documentation-api-tableo/issues"
+  },
+  "homepage": "https://yourusername.github.io/documentation-api-tableo/",
+  "devDependencies": {
+    "postman-to-openapi": "^3.0.1"
+  }
+}

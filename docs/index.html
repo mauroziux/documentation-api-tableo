@@ -1,0 +1,157 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tableo API Documentation</title>
+  <link rel="icon" type="image/jpeg" href="./icon.jpeg">
+  <link rel="stylesheet" type="text/css" href="https://unpkg.com/swagger-ui-dist@5.9.0/swagger-ui.css">
+  <style>
+    html {
+      box-sizing: border-box;
+      overflow: -moz-scrollbars-vertical;
+      overflow-y: scroll;
+    }
+    *,
+    *:before,
+    *:after {
+      box-sizing: inherit;
+    }
+    body {
+      margin: 0;
+      background: #F7F6FC;
+    }
+
+    /* Custom Header */
+    .custom-header {
+      background: #353057;
+      font-family: sans-serif;
+      color: #F7F6FC;
+      padding: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      box-shadow: 0 2px 4px rgba(53, 48, 87, 0.1);
+    }
+
+    .custom-header .logo {
+
+      height: 40px;
+      margin-right: 15px;
+      border-radius: 8px;
+    }
+
+    .custom-header h1 {
+      margin: 0;
+      font-size: 24px;
+      font-weight: 600;
+      color: #F7F6FC;
+    }
+
+    .custom-header .subtitle {
+      margin: 0;
+      font-size: 14px;
+      color: #F7F6FC;
+      opacity: 0.8;
+    }
+
+    /* Swagger UI Customizations */
+    .swagger-ui {
+      background: #F7F6FC;
+    }
+
+    .swagger-ui .topbar {
+      display: none;
+    }
+
+    .swagger-ui .info {
+      margin: 20px 0;
+    }
+
+    .swagger-ui .info .title {
+      color: #353057;
+    }
+
+    .swagger-ui .scheme-container {
+      background: #353057;
+      padding: 10px;
+      border-radius: 4px;
+    }
+
+    .swagger-ui .scheme-container .schemes > label {
+      color: #F7F6FC;
+    }
+
+    .swagger-ui .scheme-container .schemes .servers-title {
+      color: #F7F6FC;
+    }
+
+      color: #fff;
+    }
+
+
+
+    #error-message {
+      display: none;
+      padding: 20px;
+      margin: 20px;
+      background-color: #f8d7da;
+      color: #721c24;
+      border: 1px solid #f5c6cb;
+      border-radius: 4px;
+    }
+  </style>
+</head>
+<body>
+  <div class="custom-header">
+    <img src="./logo-white.png" alt="Tableo Logo" class="logo">
+    <div>
+      <h1>Tableo API Documentation</h1>
+      <p class="subtitle">Interactive API documentation for Tableo services</p>
+    </div>
+  </div>
+  <div id="error-message"></div>
+  <div id="swagger-ui"></div>
+  <script src="https://unpkg.com/swagger-ui-dist@5.9.0/swagger-ui-bundle.js"></script>
+  <script src="https://unpkg.com/swagger-ui-dist@5.9.0/swagger-ui-standalone-preset.js"></script>
+  <script>
+    window.onload = function() {
+      try {
+        const ui = SwaggerUIBundle({
+          url: "./openapi.yaml",
+          dom_id: '#swagger-ui',
+          deepLinking: true,
+          presets: [
+            SwaggerUIBundle.presets.apis,
+            SwaggerUIStandalonePreset
+          ],
+          plugins: [
+            SwaggerUIBundle.plugins.DownloadUrl
+          ],
+          layout: "StandaloneLayout",
+          validatorUrl: null,
+          onComplete: function() {
+            console.log('Swagger UI loaded successfully');
+          },
+          onFailure: function(error) {
+            console.error('Swagger UI failed to load:', error);
+            showError('Failed to load API documentation: ' + error.message);
+          }
+        });
+
+        window.ui = ui;
+      } catch (error) {
+        console.error('Error initializing Swagger UI:', error);
+        showError('Error initializing API documentation: ' + error.message);
+      }
+    }
+
+    function showError(message) {
+      const errorDiv = document.getElementById('error-message');
+      errorDiv.textContent = message;
+      errorDiv.style.display = 'block';
+    }
+  </script>
+</body>
+</html>
