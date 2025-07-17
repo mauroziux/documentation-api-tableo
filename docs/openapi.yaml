@@ -1,4 +1,4 @@
-openapi: 3.0.0
+openapi: 3.1.0
 info:
   title: Tableo API
   description: >-
@@ -12,8 +12,8 @@ info:
 
 
     >
-    [https://app.bookia.eu/api/google-server/v3](https://app.bookia.eu/api/google-server/v3) 
-      
+    [https://app.bookia.eu/api/google-server/v3](https://app.bookia.eu/api/google-server/v3)
+
 
     **Sandbox Url:**
 
@@ -63,7 +63,7 @@ paths:
 
         None.
       responses:
-        '200':
+        "200":
           description: OK
           headers:
             Server:
@@ -111,14 +111,14 @@ paths:
                   merchant_id: ChIJwwPvxwhRDhMRcphZtJwk4HQ
                   name: Testing restaurant
                   url: https://my-restaurant.com/
-                  telephone: '+35620000000'
+                  telephone: "+35620000000"
                   geo:
                     latitude: 35.9
                     longitude: 14.41
                     address:
                       locality: Il-Mosta
                       country: MT
-                      region: ''
+                      region: ""
                       street_address: Triq Durumblat Mosta MST, Il-Mosta 4812, Malta
                       postal_code: MST 4812
                   brand_id: Tableo
@@ -129,7 +129,7 @@ paths:
       summary: HealthCheck
       description: "This method returns your Booking Server health status. It enables Google to continuously monitor the serving state of your Booking server.\n\n**Request**\n\nNone\n\n**Return value**\n\nNone.\n\nUse HTTP status code to indicate the serving status of your server. Return an HTTP status code 200 (OK) if the server is up and running successfully, or to indicate an error please return one of\_[HTTP status code](https://developers.google.com/maps-booking/verticals/dining/reference/rest-api-v3/status_codes).\n\nPlease note that returning a non-200 status code may affect your integration status."
       responses:
-        '200':
+        "200":
           description: OK
           headers:
             Server:
@@ -185,7 +185,7 @@ paths:
         **Request**
 
         ```
-        //params = merchant_id 
+        //params = merchant_id
 
         ```
 
@@ -193,7 +193,7 @@ paths:
 
         None.
       responses:
-        '200':
+        "200":
           description: OK
           headers:
             Server:
@@ -248,7 +248,7 @@ paths:
                   max_days: 45
                   resources:
                     party_size: 2
-                    room_id: '1'
+                    room_id: "1"
                     room_name: Main Dining
                 - spots_total: 2
                   spots_open: 2
@@ -261,7 +261,7 @@ paths:
                   max_days: 45
                   resources:
                     party_size: 1
-                    room_id: '1'
+                    room_id: "1"
                     room_name: Main Dining
   /api/google-server/v3/services:
     get:
@@ -279,7 +279,7 @@ paths:
 
         None.
       responses:
-        '200':
+        "200":
           description: OK
           headers:
             Server:
@@ -380,7 +380,7 @@ paths:
 
 
         1. Slot details to update (booking modifications)
-            
+
 
         Fields which do not require change will not be provided in the request.
 
@@ -405,14 +405,14 @@ paths:
               type: object
               example:
                 booking:
-                  booking_id: '{{booking_id}}'
+                  booking_id: "{{booking_id}}"
                   slot:
-                    duration_sec: '7200'
+                    duration_sec: "7200"
                     resources:
                       party_size: 3
-                    start_sec: '1671645600'
+                    start_sec: "1671645600"
       responses:
-        '200':
+        "200":
           description: OK
           headers:
             Server:
@@ -461,10 +461,10 @@ paths:
                   payment_information:
                     prepayment_status: PREPAYMENT_NOT_PROVIDED
                   slot:
-                    duration_sec: '7200'
+                    duration_sec: "7200"
                     resources:
                       party_size: 3
-                    start_sec: '1671645600'
+                    start_sec: "1671645600"
                   status: CONFIRMED
                 process_duration_in_milliseconds: 20899
   /api/google-server/v3/SetMarketingPreference:
@@ -472,7 +472,7 @@ paths:
       tags:
         - google server
       summary: SetMarketingPreferenceRequest
-      description: '# SetMarketingPreferenceRequest method'
+      description: "# SetMarketingPreferenceRequest method"
       requestBody:
         content:
           application/json:
@@ -484,10 +484,10 @@ paths:
                   family_name: Suarez Vega
                   given_name: Mauricio
                   telephone: +356 9993 9607
-                  user_id: '13126198240951105170'
+                  user_id: "13126198240951105170"
                 user_to_receive_marketing: 1
       responses:
-        '200':
+        "200":
           description: OK
           headers:
             Server:
@@ -525,7 +525,7 @@ paths:
             expires:
               schema:
                 type: number
-                example: '-1'
+                example: "-1"
             Vary:
               schema:
                 type: string
@@ -544,7 +544,7 @@ paths:
                   family_name: Suarez Vega
                   given_name: Mauricio
                   telephone: +356 9993 9607
-                  user_id: '13126198240951105170'
+                  user_id: "13126198240951105170"
                 user_to_receive_marketing: 1
                 process_duration_in_milliseconds: 37
   /api/google-server/v3/CreateBooking:
@@ -576,18 +576,18 @@ paths:
           // the partner to verify the lease information.
           // If lease_ref is absent, then create the booking for the slot. (required)
           Object slot = {};
-          
+
           // Personal information of the user making the appointment (required)
           Object user_information = {};
-          
+
           // Information about payments. When payment authorizations are handled by
           // Google, if the booking request does not succeed, payment authorizations are
           // automatically canceled. (optional)
           Object payment_information = {};
-          
+
           //
           String prepayment_status = "PREPAYMENT_NOT_PROVIDED";
-          
+
           // Idempotency token for CreateBooking requests. (required)
           //
           // This uniquely identifies a booking request. Specifically:
@@ -635,18 +635,18 @@ paths:
             schema:
               type: object
               example:
-                idempotency_token: '15731994231250081786'
+                idempotency_token: "15731994231250081786"
                 payment_information:
                   prepayment_status: PREPAYMENT_NOT_PROVIDED
                 slot:
                   confirmation_mode: CONFIRMATION_MODE_SYNCHRONOUS
-                  duration_sec: '1800'
+                  duration_sec: "1800"
                   merchant_id: ChIJrXobRBRRDhMRVDIWhzzmi38
                   resources:
                     party_size: 2
-                    room_id: '3'
+                    room_id: "3"
                   service_id: reservation
-                  start_sec: '{{nextFridayUnixTime}}'
+                  start_sec: "{{nextFridayUnixTime}}"
                 user_information:
                   email: null
                   family_name: null
@@ -654,9 +654,9 @@ paths:
                   telephone: null
                   user_id: null
                 source: aiphonebot
-                additional_request: '-SPECIAL REQUESTS: I will be bringing a small dog.'
+                additional_request: "-SPECIAL REQUESTS: I will be bringing a small dog."
       responses:
-        '200':
+        "200":
           description: OK
           headers:
             Server:
@@ -702,25 +702,25 @@ paths:
               example:
                 booking:
                   booking_id: Google-5NJ-1P8
-                  idempotency_token: '15731994231250081786'
+                  idempotency_token: "15731994231250081786"
                   payment_information:
                     prepayment_status: PREPAYMENT_NOT_PROVIDED
                   slot:
                     confirmation_mode: CONFIRMATION_MODE_SYNCHRONOUS
-                    duration_sec: '1800'
+                    duration_sec: "1800"
                     merchant_id: ChIJixuLkaBLDhMRN0naVikYRhM
                     resources:
                       party_size: 2
-                      room_id: '1'
+                      room_id: "1"
                     service_id: reservation
-                    start_sec: '1671645600'
+                    start_sec: "1671645600"
                   status: CONFIRMED
                   user_information:
                     email: mauricio@bookia.eu
                     family_name: Suarez Vega
                     given_name: Mauricio
                     telephone: +356 9993 9607
-                    user_id: '13126198240951105170'
+                    user_id: "13126198240951105170"
                 process_duration_in_milliseconds: 650
   /api/google-server/v3/CheckAvailability:
     post:
@@ -747,38 +747,38 @@ paths:
         string merchant_id = 1;
 
         // Multiple slot times to be checked for availability. All queried times
-        apply   
+        apply
 
         // to the same merchant_id and service_id.
 
         Array slot_time = [];
 
-        // ID of the service. (required)   
+        // ID of the service. (required)
 
         string service_id = "reservation";
 
         // Start time of the appointment slot in seconds of UTC time since Unix
         epoch
 
-        // (required)   
+        // (required)
 
         int64 start_sec = 1;
 
-        // Duration of the appointment slot in seconds (optional)   
+        // Duration of the appointment slot in seconds (optional)
 
         int64 duration_sec = 2;
 
-        // The set of resources that specifies the appointment slot, e.g. by   
+        // The set of resources that specifies the appointment slot, e.g. by
 
         // indicating the staff member and room selected by the user, or party
-        size   
+        size
 
-        // for dining slots (optional)   
+        // for dining slots (optional)
 
         string room_id = "1";
 
         // For Dining Reservations only: the number of seats requested in the
-        booking.   
+        booking.
 
         // (required)
 
@@ -792,19 +792,19 @@ paths:
         ```
 
         // The availabilities for the requested SlotTime entries. There must
-        be   
+        be
 
-        // exactly one slot_time_availability for each SlotTime entry in the   
+        // exactly one slot_time_availability for each SlotTime entry in the
 
-        // [ext.maps.booking.partner.v3.BatchAvailabilityLookupRequest].   
+        // [ext.maps.booking.partner.v3.BatchAvailabilityLookupRequest].
 
         Array slot_time_availability = [];
 
-        // The SlotTime for which availability was checked.   
+        // The SlotTime for which availability was checked.
 
         Array slot_time = [];
 
-        // Whether the requested SlotTime is available   
+        // Whether the requested SlotTime is available
 
         bool available;
 
@@ -817,16 +817,16 @@ paths:
               example:
                 merchant_id: ChIJrXobRBRRDhMRVDIWhzzmi38
                 slot_time:
-                  - duration_sec: '1800'
+                  - duration_sec: "1800"
                     resource_ids:
                       party_size: 2
-                      room_id: '1'
+                      room_id: "1"
                     service_id: reservation
-                    start_sec: '1748642400'
+                    start_sec: "1748642400"
       security:
         - basicAuth: []
       responses:
-        '200':
+        "200":
           description: OK
           headers:
             Server:
@@ -864,7 +864,7 @@ paths:
             Access-Control-Allow-Origin:
               schema:
                 type: string
-                example: '*'
+                example: "*"
             Content-Encoding:
               schema:
                 type: string
@@ -886,7 +886,7 @@ paths:
                     max_days: 60
                     resources:
                       party_size: 2
-                      room_id: '1'
+                      room_id: "1"
                       room_name: Main Dining
                   - spots_total: 7
                     spots_open: 7
@@ -899,7 +899,7 @@ paths:
                     max_days: 60
                     resources:
                       party_size: 2
-                      room_id: '2'
+                      room_id: "2"
                       room_name: Outdoor
                   - spots_total: 16
                     spots_open: 16
@@ -912,7 +912,7 @@ paths:
                     max_days: 60
                     resources:
                       party_size: 2
-                      room_id: '1'
+                      room_id: "1"
                       room_name: Main Dining
                   - spots_total: 7
                     spots_open: 7
@@ -925,7 +925,7 @@ paths:
                     max_days: 60
                     resources:
                       party_size: 2
-                      room_id: '2'
+                      room_id: "2"
                       room_name: Outdoor
                   - spots_total: 16
                     spots_open: 16
@@ -938,7 +938,7 @@ paths:
                     max_days: 60
                     resources:
                       party_size: 2
-                      room_id: '1'
+                      room_id: "1"
                       room_name: Main Dining
                   - spots_total: 7
                     spots_open: 7
@@ -951,7 +951,7 @@ paths:
                     max_days: 60
                     resources:
                       party_size: 2
-                      room_id: '2'
+                      room_id: "2"
                       room_name: Outdoor
                 process_duration_in_milliseconds: 74195696
   /api/google-server/v3/BatchAvailabilityLookup:
@@ -979,45 +979,45 @@ paths:
         string merchant_id = 1;
 
         // Multiple slot times to be checked for availability. All queried times
-        apply   
+        apply
 
         // to the same merchant_id and service_id.
 
         Array slot_time = [];
 
-        // ID of the service. (required)   
+        // ID of the service. (required)
 
         string service_id = "reservation";
 
         // Start time of the appointment slot in seconds of UTC time since Unix
         epoch
 
-        // (required)   
+        // (required)
 
         int64 start_sec = 1;
 
-        // Duration of the appointment slot in seconds (optional)   
+        // Duration of the appointment slot in seconds (optional)
 
         int64 duration_sec = 2;
 
-        // The set of resources that specifies the appointment slot, e.g. by   
+        // The set of resources that specifies the appointment slot, e.g. by
 
         // indicating the staff member and room selected by the user, or party
-        size   
+        size
 
-        // for dining slots (optional)   
+        // for dining slots (optional)
 
         Object resource_ids = {};
 
         // The room ID as provided in the feed or empty if not applicable or no
-        room   
+        room
 
         // was selected. (required)
 
         string room_id = "1";
 
         // For Dining Reservations only: the number of seats requested in the
-        booking.   
+        booking.
 
         // (required)
 
@@ -1033,19 +1033,19 @@ paths:
         ```
 
         // The availabilities for the requested SlotTime entries. There must
-        be   
+        be
 
-        // exactly one slot_time_availability for each SlotTime entry in the   
+        // exactly one slot_time_availability for each SlotTime entry in the
 
-        // [ext.maps.booking.partner.v3.BatchAvailabilityLookupRequest].   
+        // [ext.maps.booking.partner.v3.BatchAvailabilityLookupRequest].
 
         Array slot_time_availability = [];
 
-        // The SlotTime for which availability was checked.   
+        // The SlotTime for which availability was checked.
 
         Array slot_time = [];
 
-        // Whether the requested SlotTime is available   
+        // Whether the requested SlotTime is available
 
         bool available;
 
@@ -1059,27 +1059,27 @@ paths:
               example:
                 merchant_id: ChIJrXobRBRRDhMRVDIWhzzmi38
                 slot_time:
-                  - duration_sec: '5400'
+                  - duration_sec: "5400"
                     resource_ids:
-                      room_id: '196'
+                      room_id: "196"
                     service_id: reservation
-                    start_sec: '1748646000'
-                  - duration_sec: '5400'
-                    resource_ids:
-                      party_size: 2
-                      room_id: '298'
-                    service_id: reservation
-                    start_sec: '1749245400'
-                  - duration_sec: '5400'
+                    start_sec: "1748646000"
+                  - duration_sec: "5400"
                     resource_ids:
                       party_size: 2
-                      room_id: '3906'
+                      room_id: "298"
                     service_id: reservation
-                    start_sec: '1749245400'
+                    start_sec: "1749245400"
+                  - duration_sec: "5400"
+                    resource_ids:
+                      party_size: 2
+                      room_id: "3906"
+                    service_id: reservation
+                    start_sec: "1749245400"
       security:
         - basicAuth: []
       responses:
-        '200':
+        "200":
           description: OK
           headers:
             Server:
@@ -1125,52 +1125,52 @@ paths:
               example:
                 slot_time_availability:
                   - slot_time:
-                      duration_sec: '1800'
+                      duration_sec: "1800"
                       resource_ids:
                         party_size: 3
-                        room_id: '1'
+                        room_id: "1"
                       service_id: reservation
-                      start_sec: '1649757600'
+                      start_sec: "1649757600"
                     available: true
                   - slot_time:
-                      duration_sec: '1800'
+                      duration_sec: "1800"
                       resource_ids:
                         party_size: 3
-                        room_id: '1'
+                        room_id: "1"
                       service_id: reservation
-                      start_sec: '1649750410'
+                      start_sec: "1649750410"
                     available: false
                   - slot_time:
-                      duration_sec: '1800'
+                      duration_sec: "1800"
                       resource_ids:
                         party_size: 3
-                        room_id: '1'
+                        room_id: "1"
                       service_id: reservation
-                      start_sec: '1647367200'
+                      start_sec: "1647367200"
                     available: false
                   - slot_time:
-                      duration_sec: '1800'
+                      duration_sec: "1800"
                       resource_ids:
                         party_size: 3
-                        room_id: '1'
+                        room_id: "1"
                       service_id: reservation
-                      start_sec: '1647369000'
+                      start_sec: "1647369000"
                     available: false
                   - slot_time:
-                      duration_sec: '1800'
+                      duration_sec: "1800"
                       resource_ids:
                         party_size: 3
-                        room_id: '1'
+                        room_id: "1"
                       service_id: reservation
-                      start_sec: '1647370800'
+                      start_sec: "1647370800"
                     available: false
                   - slot_time:
-                      duration_sec: '1800'
+                      duration_sec: "1800"
                       resource_ids:
                         party_size: 3
-                        room_id: '1'
+                        room_id: "1"
                       service_id: reservation
-                      start_sec: '1647372600'
+                      start_sec: "1647372600"
                     available: false
   /api/chatbot/manager-message:
     post:
@@ -1217,7 +1217,7 @@ paths:
 
 
         1. Slot details to update (booking modifications)
-            
+
 
         Fields which do not require change will not be provided in the request.
 
@@ -1244,7 +1244,7 @@ paths:
                 merchant_id: ChIJRe5DsfxRDhMRDhagFJI5py8
                 message: hola
       responses:
-        '200':
+        "200":
           description: OK
           headers:
             Server:
@@ -1293,10 +1293,10 @@ paths:
                   payment_information:
                     prepayment_status: PREPAYMENT_NOT_PROVIDED
                   slot:
-                    duration_sec: '7200'
+                    duration_sec: "7200"
                     resources:
                       party_size: 3
-                    start_sec: '1671645600'
+                    start_sec: "1671645600"
                   status: CONFIRMED
                 process_duration_in_milliseconds: 20899
   /api/chatbot/booking/{booking_id}:
@@ -1344,7 +1344,7 @@ paths:
 
 
         1. Slot details to update (booking modifications)
-            
+
 
         Fields which do not require change will not be provided in the request.
 
@@ -1369,7 +1369,7 @@ paths:
             type: string
           required: true
       responses:
-        '200':
+        "200":
           description: OK
           headers:
             Server:
@@ -1421,10 +1421,10 @@ paths:
                       payment_information:
                         prepayment_status: PREPAYMENT_NOT_PROVIDED
                       slot:
-                        duration_sec: '7200'
+                        duration_sec: "7200"
                         resources:
                           party_size: 3
-                        start_sec: '1671645600'
+                        start_sec: "1671645600"
                       status: CONFIRMED
                     process_duration_in_milliseconds: 20899
                 example-1:
@@ -1435,8 +1435,8 @@ paths:
                       reference: PFM-YJR
                       no_of_adults: 2
                       no_of_children: 0
-                      date: '2024-02-14T05:45:00.000000Z'
-                      end_time: '2024-02-14T08:15:00.000000Z'
+                      date: "2024-02-14T05:45:00.000000Z"
+                      end_time: "2024-02-14T08:15:00.000000Z"
                       duration: 150
                       booking_flexible: 0
                       dining_area_id: 1
@@ -1447,8 +1447,8 @@ paths:
                       patron_id: 326511
                       edited_by: 2101
                       created_by: 2101
-                      created_at: '2024-01-25T09:07:22.000000Z'
-                      updated_at: '2024-01-25T09:07:39.000000Z'
+                      created_at: "2024-01-25T09:07:22.000000Z"
+                      updated_at: "2024-01-25T09:07:39.000000Z"
                       channel_id: 1
                       private_comment: null
                       is_from_api: 0
@@ -1458,7 +1458,7 @@ paths:
                         - tables:
                             - id: 7516
                               name: T 3
-                          date: '2024-01-25T09:07:22.213085Z'
+                          date: "2024-01-25T09:07:22.213085Z"
                       concierge_id: null
                       api_3rd_parties: 0
                       company: null
@@ -1508,7 +1508,7 @@ paths:
 
 
         1. Slot details to update (booking modifications)
-            
+
 
         Fields which do not require change will not be provided in the request.
 
@@ -1533,7 +1533,7 @@ paths:
             type: string
           example: ChIJrXobRBRRDhMRVDIWhzzmi38
       responses:
-        '200':
+        "200":
           description: OK
           headers:
             Server:
@@ -1571,7 +1571,7 @@ paths:
             Access-Control-Allow-Origin:
               schema:
                 type: string
-                example: '*'
+                example: "*"
             Content-Encoding:
               schema:
                 type: string
@@ -1585,8 +1585,8 @@ paths:
                   - reference: DMJ-E1B
                     no_of_adults: 2
                     no_of_children: 0
-                    date: '2022-12-24T17:00:00.000000Z'
-                    end_time: '2022-12-24T19:00:00.000000Z'
+                    date: "2022-12-24T17:00:00.000000Z"
+                    end_time: "2022-12-24T19:00:00.000000Z"
                     status: accepted
                     dining_area: Indoor
                     restaurant: TBL Ben's Bistro
@@ -1594,8 +1594,8 @@ paths:
                   - reference: 3FG-69J
                     no_of_adults: 2
                     no_of_children: 0
-                    date: '2022-12-24T18:00:00.000000Z'
-                    end_time: '2022-12-24T20:00:00.000000Z'
+                    date: "2022-12-24T18:00:00.000000Z"
+                    end_time: "2022-12-24T20:00:00.000000Z"
                     status: accepted
                     dining_area: Indoor
                     restaurant: TBL Ben's Bistro
@@ -1603,8 +1603,8 @@ paths:
                   - reference: KPG-045
                     no_of_adults: 3
                     no_of_children: 0
-                    date: '2022-12-07T20:00:00.000000Z'
-                    end_time: '2022-12-07T22:00:00.000000Z'
+                    date: "2022-12-07T20:00:00.000000Z"
+                    end_time: "2022-12-07T22:00:00.000000Z"
                     status: cancelled
                     dining_area: Indoor
                     restaurant: TBL Ben's Bistro
@@ -1612,8 +1612,8 @@ paths:
                   - reference: Google-ZXO-JE3
                     no_of_adults: 2
                     no_of_children: null
-                    date: '2023-06-17T09:00:00.000000Z'
-                    end_time: '2023-06-17T11:00:00.000000Z'
+                    date: "2023-06-17T09:00:00.000000Z"
+                    end_time: "2023-06-17T11:00:00.000000Z"
                     status: accepted
                     dining_area: Indoor
                     restaurant: TBL Ben's Bistro
@@ -1621,8 +1621,8 @@ paths:
                   - reference: Google-8MV-5BI
                     no_of_adults: 2
                     no_of_children: null
-                    date: '2024-02-12T19:00:00.000000Z'
-                    end_time: '2024-02-12T21:00:00.000000Z'
+                    date: "2024-02-12T19:00:00.000000Z"
+                    end_time: "2024-02-12T21:00:00.000000Z"
                     status: accepted
                     dining_area: Indoor
                     restaurant: TBL Ben's Bistro
@@ -1630,8 +1630,8 @@ paths:
                   - reference: aichatbot-VXT-0EM
                     no_of_adults: 3
                     no_of_children: null
-                    date: '2024-02-12T19:00:00.000000Z'
-                    end_time: '2024-02-12T21:00:00.000000Z'
+                    date: "2024-02-12T19:00:00.000000Z"
+                    end_time: "2024-02-12T21:00:00.000000Z"
                     status: cancelled
                     dining_area: Outdoor
                     restaurant: TBL Ben's Bistro
@@ -1639,8 +1639,8 @@ paths:
                   - reference: aichatbot-Q4M-A0H
                     no_of_adults: 2
                     no_of_children: null
-                    date: '2024-05-06T19:00:00.000000Z'
-                    end_time: '2024-05-06T21:00:00.000000Z'
+                    date: "2024-05-06T19:00:00.000000Z"
+                    end_time: "2024-05-06T21:00:00.000000Z"
                     status: accepted
                     dining_area: Indoor
                     restaurant: TBL Ben's Bistro
@@ -1690,7 +1690,7 @@ paths:
 
 
         1. Slot details to update (booking modifications)
-            
+
 
         Fields which do not require change will not be provided in the request.
 
@@ -1715,7 +1715,7 @@ paths:
             type: string
           required: true
       responses:
-        '200':
+        "200":
           description: OK
           headers:
             Server:
@@ -1767,10 +1767,10 @@ paths:
                       payment_information:
                         prepayment_status: PREPAYMENT_NOT_PROVIDED
                       slot:
-                        duration_sec: '7200'
+                        duration_sec: "7200"
                         resources:
                           party_size: 3
-                        start_sec: '1671645600'
+                        start_sec: "1671645600"
                       status: CONFIRMED
                     process_duration_in_milliseconds: 20899
                 example-1:
@@ -1781,8 +1781,8 @@ paths:
                       reference: PFM-YJR
                       no_of_adults: 2
                       no_of_children: 0
-                      date: '2024-02-14T05:45:00.000000Z'
-                      end_time: '2024-02-14T08:15:00.000000Z'
+                      date: "2024-02-14T05:45:00.000000Z"
+                      end_time: "2024-02-14T08:15:00.000000Z"
                       duration: 150
                       booking_flexible: 0
                       dining_area_id: 1
@@ -1793,8 +1793,8 @@ paths:
                       patron_id: 326511
                       edited_by: 2101
                       created_by: 2101
-                      created_at: '2024-01-25T09:07:22.000000Z'
-                      updated_at: '2024-01-25T09:07:39.000000Z'
+                      created_at: "2024-01-25T09:07:22.000000Z"
+                      updated_at: "2024-01-25T09:07:39.000000Z"
                       channel_id: 1
                       private_comment: null
                       is_from_api: 0
@@ -1804,7 +1804,7 @@ paths:
                         - tables:
                             - id: 7516
                               name: T 3
-                          date: '2024-01-25T09:07:22.213085Z'
+                          date: "2024-01-25T09:07:22.213085Z"
                       concierge_id: null
                       api_3rd_parties: 0
                       company: null
@@ -1822,7 +1822,7 @@ paths:
               example:
                 id: evt_1P3FYQI9BCKEKwHW0Dwgkzh3
                 object: event
-                api_version: '2020-08-27'
+                api_version: "2020-08-27"
                 created: 1712572557
                 data:
                   object:
@@ -1885,7 +1885,7 @@ paths:
                           amount: 26373
                           amount_excluding_tax: 26373
                           currency: eur
-                          description: 'outstanding bills: Salumeria Gardens'
+                          description: "outstanding bills: Salumeria Gardens"
                           discount_amounts: []
                           discountable: true
                           discounts: []
@@ -1916,7 +1916,7 @@ paths:
                             transform_quantity: null
                             type: one_time
                             unit_amount: 26373
-                            unit_amount_decimal: '26373'
+                            unit_amount_decimal: "26373"
                           proration: false
                           proration_details:
                             credited_items: null
@@ -1925,7 +1925,7 @@ paths:
                           tax_amounts: []
                           tax_rates: []
                           type: invoiceitem
-                          unit_amount_excluding_tax: '26373'
+                          unit_amount_excluding_tax: "26373"
                       has_more: false
                       total_count: 1
                       url: /v1/invoices/in_1P3FYNI9BCKEKwHWvSr0s7oS/lines
@@ -1984,7 +1984,7 @@ paths:
                   idempotency_key: 92b60adc-cd49-4003-9f57-4029a4a58c7e
                 type: invoice.payment_failed
       responses:
-        '200':
+        "200":
           description: Successful response
           content:
             application/json: {}
@@ -2010,7 +2010,7 @@ paths:
       security:
         - bearerAuth: []
       responses:
-        '200':
+        "200":
           description: Successful response
           content:
             application/json: {}
@@ -2033,7 +2033,7 @@ paths:
                 phone_call_entity_first_name: Agriturismo
                 phone_call_entity_last_name: Puntalizzu
                 phone_call_entity_owner_name: Monica Dang Minh
-                phone_call_entity_sales_account_cf_tableo_uid: '5825'
+                phone_call_entity_sales_account_cf_tableo_uid: "5825"
                 phone_call_entity_country: Italy
                 phone_call_entity_cf_country_code: IT
                 phone_call_entity_recent_note: mauricio test
@@ -2042,7 +2042,7 @@ paths:
                 phone_call_entity_sales_account_id: 202004368087
                 phone_call_entity_sales_account_name: Puntalizzu
                 phone_call_call_direction: Outgoing
-                phone_call_is_manual: 'Yes'
+                phone_call_is_manual: "Yes"
                 phone_call_entity_sales_account_cf_google_restaurant_name: >-
                   Agriturismo Puntalizzu, Appartamenti - Wines Food Homemade
                   products, Hiking, MTB excursions, Outdoor activities
@@ -2050,7 +2050,7 @@ paths:
       security:
         - bearerAuth: []
       responses:
-        '200':
+        "200":
           description: Successful response
           content:
             application/json: {}
@@ -2060,7 +2060,7 @@ paths:
         - Agora
       summary: Turnos
       responses:
-        '200':
+        "200":
           description: Successful response
           content:
             application/json: {}
@@ -2070,7 +2070,7 @@ paths:
         - Agora
       summary: Reservas
       responses:
-        '200':
+        "200":
           description: Successful response
           content:
             application/json: {}
@@ -2080,7 +2080,7 @@ paths:
         - Agora
       summary: Reservas en mesa
       responses:
-        '200':
+        "200":
           description: Successful response
           content:
             application/json: {}
@@ -2099,7 +2099,7 @@ paths:
                 a_ids_mesas:
                   - 235
       responses:
-        '200':
+        "200":
           description: Successful response
           content:
             application/json: {}
@@ -2116,7 +2116,7 @@ paths:
               example:
                 reserva_id: 2043472
       responses:
-        '200':
+        "200":
           description: Successful response
           content:
             application/json: {}
@@ -2132,7 +2132,7 @@ paths:
               type: object
               example:
                 ticket_json:
-                  id_reserv: '2043493'
+                  id_reserv: "2043493"
                   items:
                     - productName: Pizza Barbacoa
                       amount: 1,00
@@ -2141,13 +2141,13 @@ paths:
                   pyaments:
                     - type: Efectivo
                       amount: 6,33
-                  printDate: '2025-03-14 20:21:28'
+                  printDate: "2025-03-14 20:21:28"
                   total: 6,33
                 reserva_id: 2043493
                 importe_total: 6.33
                 num_personas: 2
       responses:
-        '200':
+        "200":
           description: Successful response
           content:
             application/json: {}
@@ -2169,7 +2169,7 @@ paths:
                 b_comprobar_mesas: true
                 b_comprobar_mesas_ocupadas: false
       responses:
-        '200':
+        "200":
           description: Successful response
           content:
             application/json: {}
@@ -2179,7 +2179,7 @@ paths:
         - Agora
       summary: Mesas
       responses:
-        '200':
+        "200":
           description: Successful response
           content:
             application/json: {}
@@ -2189,7 +2189,7 @@ paths:
         - default
       summary: widget
       responses:
-        '200':
+        "200":
           description: Successful response
           content:
             application/json: {}
@@ -2199,7 +2199,7 @@ paths:
         - default
       summary: trace test
       responses:
-        '200':
+        "200":
           description: Successful response
           content:
             application/json: {}
@@ -2213,19 +2213,19 @@ paths:
           in: query
           schema:
             type: string
-          example: '{{nextFridayUnixTime}}'
+          example: "{{nextFridayUnixTime}}"
         - name: no_of_adults
           in: query
           schema:
             type: integer
-          example: '2'
+          example: "2"
         - name: dining
           in: query
           schema:
             type: string
           example: Indoor
       responses:
-        '200':
+        "200":
           description: Successful response
           content:
             application/json: {}
@@ -2239,24 +2239,24 @@ paths:
           in: query
           schema:
             type: string
-          example: '2024-07-01'
+          example: "2024-07-01"
         - name: booking_date
           in: query
           schema:
             type: string
-          example: '2024-07-01'
+          example: "2024-07-01"
         - name: no_of_adults
           in: query
           schema:
             type: integer
-          example: '2'
+          example: "2"
         - name: no_of_children
           in: query
           schema:
             type: integer
-          example: '0'
+          example: "0"
       responses:
-        '200':
+        "200":
           description: Successful response
           content:
             application/json: {}

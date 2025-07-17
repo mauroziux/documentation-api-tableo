@@ -5,7 +5,7 @@
   "main": "index.html",
   "scripts": {
     "build": "bun p2o src/postman_collection.json -f docs/openapi.yaml -o src/options.json",
-    "serve": "npx http-server docs -p 800",
+    "serve": "wrangler pages dev docs",
     "test": "node test-setup.js",
     "deploy": "gh-pages -d docs"
   },
@@ -27,6 +27,7 @@
   },
   "homepage": "https://yourusername.github.io/documentation-api-tableo/",
   "devDependencies": {
-    "postman-to-openapi": "^3.0.1"
+    "postman-to-openapi": "^3.0.1",
+    "wrangler": "^4.25.0"
   }
 }
