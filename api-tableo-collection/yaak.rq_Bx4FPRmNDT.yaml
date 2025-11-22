@@ -1,0 +1,23 @@
+type: http_request
+model: http_request
+id: rq_Bx4FPRmNDT
+createdAt: 2025-11-19T21:54:07.635549
+updatedAt: 2025-11-19T21:54:07.635549
+workspaceId: wk_vGxjUtTZ2p
+folderId: fl_qtdcK4gLhB
+authentication: {}
+authenticationType: null
+body:
+  text: "{\n     \"user_information\": {\n        \"email\": \"mauroziux@gmail.com\",\n        \"family_name\": \"Suarez Vega\",\n        \"given_name\": \"Mauricio\",\n        \"telephone\": \"+356 9993 9607\",\n        \"user_id\": \"13126198240951105170\"\n    },\n    \"user_to_receive_marketing\":1\n   \n}"
+bodyType: application/json
+description: '# SetMarketingPreferenceRequest method'
+headers:
+- enabled: true
+  name: Content-Type
+  value: application/json
+  id: null
+method: POST
+name: SetMarketingPreferenceRequest
+sortPriority: 7.0
+url: ${[url]}/api/google-server/v3/SetMarketingPreference
+urlParameters: []

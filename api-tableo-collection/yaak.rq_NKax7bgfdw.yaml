@@ -1,0 +1,46 @@
+type: http_request
+model: http_request
+id: rq_NKax7bgfdw
+createdAt: 2025-11-19T21:54:07.637087
+updatedAt: 2025-11-19T21:54:07.637087
+workspaceId: wk_vGxjUtTZ2p
+folderId: fl_xyUTbsEpPN
+authentication:
+  token: 1|1BChfZvzDA36VKwKJdbPLiIEGC8Jmp4rU0V4GPIza14639ea
+authenticationType: bearer
+body:
+  text: |-
+    {
+      "phone_call_id": 202000945524,
+      "phone_call_owner_name": "Dev Team",
+      "phone_call_call_status": "Completed",
+      "phone_call_created_at": "01-07-2025 18:47:50",
+      "phone_call_outcome_id": 202001529630,
+      "phone_call_entity_first_name": "Agriturismo",
+      "phone_call_entity_last_name": "Puntalizzu",
+      "phone_call_entity_owner_name": "Monica Dang Minh",
+      "phone_call_entity_sales_account_cf_tableo_uid": "5825",
+      "phone_call_entity_country": "Italy",
+      "phone_call_entity_cf_country_code": "IT",
+      "phone_call_entity_recent_note": "mauricio test",
+      "phone_call_entity_sales_account_recent_note": null,
+      "phone_call_entity_id": 202032002917,
+      "phone_call_entity_sales_account_id": 202004368087,
+      "phone_call_entity_sales_account_name": "Puntalizzu",
+      "phone_call_call_direction": "Outgoing",
+      "phone_call_is_manual": "Yes",
+      "phone_call_entity_sales_account_cf_google_restaurant_name": "Agriturismo Puntalizzu, Appartamenti - Wines Food Homemade products, Hiking, MTB excursions, Outdoor activities",
+      "type": "Contact"
+    }
+bodyType: application/json
+description: ''
+headers:
+- enabled: true
+  name: Content-Type
+  value: application/json
+  id: null
+method: POST
+name: Webhook Slack
+sortPriority: 24.0
+url: ${[url]}/api/freshworks/webhook/slack
+urlParameters: []

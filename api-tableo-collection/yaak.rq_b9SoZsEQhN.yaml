@@ -1,0 +1,34 @@
+type: http_request
+model: http_request
+id: rq_b9SoZsEQhN
+createdAt: 2025-11-19T21:54:07.634918
+updatedAt: 2025-11-22T18:19:50.152925
+workspaceId: wk_vGxjUtTZ2p
+folderId: fl_qtdcK4gLhB
+authentication:
+  password: Google-4@tableo.com
+  username: Google-4@tableo.com
+authenticationType: basic
+body:
+  form:
+  - enabled: true
+    id: 2z89fRHYuz
+    name: source
+    value: facebook
+  - enabled: true
+    id: BHIU30mBgG
+    name: ''
+    value: ''
+bodyType: multipart/form-data
+description: |
+  This method returns all merchants.
+headers:
+- enabled: true
+  name: Content-Type
+  value: multipart/form-data
+  id: null
+method: GET
+name: merchants
+sortPriority: 1.0
+url: ${[url]}/api/google-server/v3/merchants
+urlParameters: []

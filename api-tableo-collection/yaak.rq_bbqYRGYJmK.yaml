@@ -1,0 +1,54 @@
+type: http_request
+model: http_request
+id: rq_bbqYRGYJmK
+createdAt: 2025-11-19T21:54:07.635618
+updatedAt: 2025-11-22T18:15:49.032215
+workspaceId: wk_vGxjUtTZ2p
+folderId: fl_qtdcK4gLhB
+authentication: {}
+authenticationType: null
+body:
+  text: |-
+    {
+        "idempotency_token": "15731994231250081786",
+        "payment_information": {
+            "prepayment_status": "PREPAYMENT_NOT_PROVIDED"
+        },
+        "slot": {
+            "confirmation_mode": "CONFIRMATION_MODE_SYNCHRONOUS",
+            "duration_sec": "1800",
+            "merchant_id": "${[merchant_id]}",
+            "resources": {
+                "party_size": 2,
+                "room_id": "1"
+            },
+            "service_id": "reservation",
+            "start_sec": "1761688800"
+        },
+        "user_information": {
+            "email": null,
+            "family_name": null,
+            "given_name": "Jonathan",
+            "telephone": "99939607",
+            "user_id": null
+        },
+        "source": "google",
+        "additional_request": "-SPECIAL REQUESTS: I will be bringing a small dog."
+    }
+bodyType: application/json
+description: |
+  # CreateBooking method
+
+  The client requests to create a booking. The partner backend makes a booking for the requested slot, and returns the slot upon success, or business logic error (e.g. if the slot has become unavailable, or if payment is invalid, etc.) upon failure.
+
+  Please note that business logic errors should be returned in the `CreateBookingResponse.booking_failure` field, rather than via a non-200 HTTP response code.
+headers:
+- enabled: true
+  name: Content-Type
+  value: application/json
+  id: null
+method: POST
+name: CreateBooking
+sortPriority: 8.0
+url: ${[url]}/api/google-server/v3/CreateBooking
+urlParameters: []

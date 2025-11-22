@@ -1,0 +1,18 @@
+type: http_request
+model: http_request
+id: rq_MzEvmYNu5n
+createdAt: 2025-11-19T21:54:07.638256
+updatedAt: 2025-11-22T16:55:54.522105
+workspaceId: wk_vGxjUtTZ2p
+folderId: fl_TXbTs9cjKP
+authentication: {}
+authenticationType: null
+body: {}
+bodyType: null
+description: ''
+headers: []
+method: POST
+name: export Backups S3 Prod
+sortPriority: 0.0
+url: https://7eml6eu5hdxsgwndwypkj52nbq0vqngr.lambda-url.eu-central-1.on.aws/
+urlParameters: []

@@ -1,0 +1,44 @@
+type: http_request
+model: http_request
+id: rq_sxb89YFLJ9
+createdAt: 2025-11-19T21:54:07.635145
+updatedAt: 2025-11-22T18:47:07.312092
+workspaceId: wk_vGxjUtTZ2p
+folderId: fl_qtdcK4gLhB
+authentication: {}
+authenticationType: null
+body:
+  form:
+  - enabled: false
+    id: qu3tqn4RNs
+    name: :merchant_id
+    value: ${[ merchant_id ]}
+  - enabled: true
+    id: bxT5eTkdqI
+    name: ''
+    value: ''
+bodyType: application/json
+description: |
+  This method returns avaialbility for a specific merchant
+headers:
+- enabled: true
+  name: Content-Type
+  value: application/json
+  id: W2DYTWKtSt
+method: GET
+name: availabilities
+sortPriority: 3.0
+url: ${[url]}/api/google-server/v3/availabilities/:merchant_id
+urlParameters:
+- enabled: true
+  name: :merchant_id
+  value: ${[ merchant_id ]}
+  id: jXaE5HJAAa
+- enabled: true
+  name: days
+  value: '3'
+  id: TTgnZDqgSd
+- enabled: true
+  name: ''
+  value: ''
+  id: fCVYtKA8s4

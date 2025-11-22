@@ -1,0 +1,13 @@
+type: folder
+model: folder
+id: fl_GP6254G5Qu
+createdAt: 2025-11-19T21:54:07.638994
+updatedAt: 2025-11-22T16:57:19.380035
+workspaceId: wk_vGxjUtTZ2p
+folderId: null
+authentication: {}
+authenticationType: null
+description: ''
+headers: []
+name: chatbot
+sortPriority: 4000.0

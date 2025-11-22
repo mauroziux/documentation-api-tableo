@@ -1,0 +1,45 @@
+type: http_request
+model: http_request
+id: rq_WMSWRjwhN4
+createdAt: 2025-11-19T21:54:07.635766
+updatedAt: 2025-11-22T18:48:06.580134
+workspaceId: wk_vGxjUtTZ2p
+folderId: fl_qtdcK4gLhB
+authentication: {}
+authenticationType: null
+body:
+  text: "{\n    \"merchant_id\": \"${[merchant_id]}\",\n    \"slot_time\": [\n        {\n            \"duration_sec\": \"5400\",\n            \"resource_ids\": {\n                \"room_id\": \"2\",\n              \"party_size\": 2\n            },\n            \"service_id\": \"reservation\",\n            \"start_sec\": \"${[ dateAdd(days='1', format='X') ]}\"\n        }\n       \n    ]\n}"
+bodyType: application/json
+description: |
+  Checks availability for multiple slot times with resource constraints. Used by Reserve with Google to validate booking options before presentation.
+
+  This endpoint verifies that requested appointment slots are currently valid and available, allowing the system to ensure only current slots are presented to users during the reservation flow.
+
+  **Request Parameters:**
+  - `merchant_id`: String, ID of the merchant for which availability is checked.
+  - `slot_time`: Array of objects, each representing a time slot with:
+    - `service_id`: String (e.g., "reservation")
+    - `start_sec`: Integer (Unix timestamp for start time)
+    - `duration_sec`: Integer (duration in seconds, optional)
+    - `resource_ids`: Object with `room_id` (string) and `party_size` (integer)
+
+  **Response:**
+  Returns an object with `slot_time_availability` array, each item containing the original `slot_time` and a boolean `available` field indicating if the slot is bookable.
+headers:
+- enabled: true
+  name: Content-Type
+  value: application/json
+  id: null
+method: POST
+name: BatchAvailabilityLookup
+sortPriority: 10.0
+url: ${[url]}/api/google-server/v3/BatchAvailabilityLookup
+urlParameters:
+- enabled: false
+  name: ''
+  value: ''
+  id: SvD45aJMYw
+- enabled: true
+  name: ''
+  value: ''
+  id: qEVjp5VsQP

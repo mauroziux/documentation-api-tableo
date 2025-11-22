@@ -1,0 +1,16 @@
+type: workspace
+model: workspace
+id: wk_vGxjUtTZ2p
+createdAt: 2025-11-19T21:54:07.634381
+updatedAt: 2025-11-22T15:04:51.351158
+authentication:
+  password: Google-4@tableo.com
+  username: Google-4@tableo.com
+authenticationType: basic
+description: "## Prepare Your Environment:\n\nChange the url to the `Sandbox Url` for test\n\n**Production Url:**\n\n> [https://app.bookia.eu/api/google-server/v3](https://app.bookia.eu/api/google-server/v3) \n  \n\n**Sandbox Url:**\n\n> [https://devrms.tableo.com/api/google-server/v3](https://devrms.tableo.com/api/google-server/v3)"
+headers: []
+name: Tableo API
+encryptionKeyChallenge: eUE0azNuQwHAFVw1jSzQtXHE22jC5DuA8J1EYxNOQUzx+zwOKaRVapOIoCRKOuUzp9ArONkmamxvha6moWp6guQXZasyUv14O1xk9L2EEjU8msPuX+rE3VBgiuwxsHPpwHw=
+settingValidateCertificates: true
+settingFollowRedirects: true
+settingRequestTimeout: 0

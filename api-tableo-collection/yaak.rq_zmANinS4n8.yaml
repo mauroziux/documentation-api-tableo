@@ -1,0 +1,26 @@
+type: http_request
+model: http_request
+id: rq_zmANinS4n8
+createdAt: 2025-11-19T21:54:07.635698
+updatedAt: 2025-11-22T18:15:35.048467
+workspaceId: wk_vGxjUtTZ2p
+folderId: fl_qtdcK4gLhB
+authentication: {}
+authenticationType: null
+body:
+  text: "{\n    \"merchant_id\": \"${[merchant_id]}\",\n    \"slot_time\": [\n        {\n            \"duration_sec\": \"1800\",\n             \"resource_ids\": {\n                \"party_size\": 5\n            \n            },\n            \"service_id\": \"reservation\",\n            \"start_sec\": \"1759514400\"\n        }\n    ]\n}"
+bodyType: application/json
+description: |-
+  # CheckAvailability method
+
+  When a CheckAvailability is issued, the partner booking server verifies that the requested appointment slots are currently valid and available. This can be used by Reserve with Google to ensure that only current slots are presented to users during the reservation flow.
+headers:
+- enabled: true
+  name: Content-Type
+  value: application/json
+  id: null
+method: POST
+name: CheckAvailability
+sortPriority: 9.0
+url: ${[url]}/api/google-server/v3/CheckAvailability
+urlParameters: []

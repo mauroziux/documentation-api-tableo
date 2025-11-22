@@ -1,0 +1,27 @@
+type: http_request
+model: http_request
+id: rq_qHi9Di3HCR
+createdAt: 2025-11-19T21:54:07.636011
+updatedAt: 2025-11-22T21:26:29.216974
+workspaceId: wk_vGxjUtTZ2p
+folderId: fl_GP6254G5Qu
+authentication: {}
+authenticationType: null
+body:
+  text: |-
+    {
+        "merchant_id":"${[ merchant_id ]}",
+        "message":"hola"
+    }
+bodyType: application/json
+description: ''
+headers:
+- enabled: true
+  name: Content-Type
+  value: application/json
+  id: null
+method: POST
+name: ''
+sortPriority: 26.0
+url: ${[url]}/api/chatbot/manager-message
+urlParameters: []

@@ -1,0 +1,446 @@
+type: http_request
+model: http_request
+id: rq_ep43ZUraPg
+createdAt: 2025-11-19T21:54:07.637510
+updatedAt: 2025-11-19T21:54:07.637510
+workspaceId: wk_vGxjUtTZ2p
+folderId: fl_4AEkvhigdF
+authentication: {}
+authenticationType: null
+body:
+  text: |-
+    {
+      "ticket_json": {
+        "id_reserv": "2220317",
+        "items": [
+          {
+            "productName": "ALHAMBRA ESPECIAL",
+            "amount": "3,00",
+            "unitPrice": "3,00",
+            "totalPrice": "9,00"
+          },
+          {
+            "productName": "TINTO DE VERANO LIMON",
+            "amount": "2,00",
+            "unitPrice": "3,00",
+            "totalPrice": "6,00"
+          },
+          {
+            "productName": "ALHAMBRA ESPECIAL",
+            "amount": "1,00",
+            "unitPrice": "3,00",
+            "totalPrice": "3,00"
+          },
+          {
+            "productName": "TAPA PRIMERA",
+            "amount": "6,00",
+            "unitPrice": "0,00",
+            "totalPrice": "0,00"
+          },
+          {
+            "productName": "COPA AMSTEL",
+            "amount": "1,00",
+            "unitPrice": "3,00",
+            "totalPrice": "3,00"
+          },
+          {
+            "productName": "TINTO DE VERANO LIMON",
+            "amount": "2,00",
+            "unitPrice": "3,00",
+            "totalPrice": "6,00"
+          },
+          {
+            "productName": "AGUA MINERAL",
+            "amount": "2,00",
+            "unitPrice": "2,20",
+            "totalPrice": "4,40"
+          },
+          {
+            "productName": "TAPA PRIMERA",
+            "amount": "5,00",
+            "unitPrice": "0,00",
+            "totalPrice": "0,00"
+          },
+          {
+            "productName": "ALHAMBRA ESPECIAL",
+            "amount": "1,00",
+            "unitPrice": "3,00",
+            "totalPrice": "3,00"
+          },
+          {
+            "productName": "TAPA PRIMERA",
+            "amount": "1,00",
+            "unitPrice": "0,00",
+            "totalPrice": "0,00"
+          },
+          {
+            "productName": "COPA AMSTEL",
+            "amount": "1,00",
+            "unitPrice": "3,00",
+            "totalPrice": "3,00"
+          },
+          {
+            "productName": "AMSTEL 0,0 TOSTADA",
+            "amount": "1,00",
+            "unitPrice": "3,00",
+            "totalPrice": "3,00"
+          },
+          {
+            "productName": "TINTO DE VERANO LIMON",
+            "amount": "1,00",
+            "unitPrice": "3,00",
+            "totalPrice": "3,00"
+          },
+          {
+            "productName": "ALHAMBRA ESPECIAL",
+            "amount": "1,00",
+            "unitPrice": "3,00",
+            "totalPrice": "3,00"
+          },
+          {
+            "productName": "TAPA PRIMERA",
+            "amount": "5,00",
+            "unitPrice": "0,00",
+            "totalPrice": "0,00"
+          },
+          {
+            "productName": "ALHAMBRA ESPECIAL",
+            "amount": "1,00",
+            "unitPrice": "3,00",
+            "totalPrice": "3,00"
+          },
+          {
+            "productName": "TAPA PRIMERA",
+            "amount": "1,00",
+            "unitPrice": "0,00",
+            "totalPrice": "0,00"
+          },
+          {
+            "productName": "ALHAMBRA ESPECIAL",
+            "amount": "4,00",
+            "unitPrice": "3,00",
+            "totalPrice": "12,00"
+          },
+          {
+            "productName": "COCA-COLA",
+            "amount": "2,00",
+            "unitPrice": "2,80",
+            "totalPrice": "5,60"
+          },
+          {
+            "productName": "TAPA PRIMERA",
+            "amount": "5,00",
+            "unitPrice": "0,00",
+            "totalPrice": "0,00"
+          },
+          {
+            "productName": "ALHAMBRA ESPECIAL",
+            "amount": "1,00",
+            "unitPrice": "3,00",
+            "totalPrice": "3,00"
+          },
+          {
+            "productName": "ENTERA FINGERS",
+            "amount": "3,00",
+            "unitPrice": "13,00",
+            "totalPrice": "39,00"
+          },
+          {
+            "productName": "TOMATE ALIÑAO",
+            "amount": "3,00",
+            "unitPrice": "8,00",
+            "totalPrice": "24,00"
+          },
+          {
+            "productName": "ENTERA SECRETO",
+            "amount": "3,00",
+            "unitPrice": "15,00",
+            "totalPrice": "45,00"
+          },
+          {
+            "productName": "ENTERA JAMON ASADO",
+            "amount": "3,00",
+            "unitPrice": "13,00",
+            "totalPrice": "39,00"
+          },
+          {
+            "productName": "HUEVOS ROTOS CON JAMON",
+            "amount": "2,00",
+            "unitPrice": "14,00",
+            "totalPrice": "28,00"
+          },
+          {
+            "productName": "HUEVOS ROTOS SETAS Y LANGOSTINOS",
+            "amount": "2,00",
+            "unitPrice": "15,00",
+            "totalPrice": "30,00"
+          },
+          {
+            "productName": "ENTERA CROQUETAS",
+            "amount": "2,00",
+            "unitPrice": "13,00",
+            "totalPrice": "26,00"
+          },
+          {
+            "productName": "ENTERA CALAMARES",
+            "amount": "3,00",
+            "unitPrice": "15,00",
+            "totalPrice": "45,00"
+          },
+          {
+            "productName": "LANGOSTINOS AL PIL-PIL",
+            "amount": "1,00",
+            "unitPrice": "15,00",
+            "totalPrice": "15,00"
+          },
+          {
+            "productName": "COPA AMSTEL",
+            "amount": "2,00",
+            "unitPrice": "3,00",
+            "totalPrice": "6,00"
+          },
+          {
+            "productName": "TINTO DE VERANO BLANCA",
+            "amount": "1,00",
+            "unitPrice": "3,00",
+            "totalPrice": "3,00"
+          },
+          {
+            "productName": "AMSTEL 0,0 TOSTADA",
+            "amount": "1,00",
+            "unitPrice": "3,00",
+            "totalPrice": "3,00"
+          },
+          {
+            "productName": "TINTO DE VERANO LIMON",
+            "amount": "1,00",
+            "unitPrice": "3,00",
+            "totalPrice": "3,00"
+          },
+          {
+            "productName": "ALHAMBRA ESPECIAL",
+            "amount": "1,00",
+            "unitPrice": "3,00",
+            "totalPrice": "3,00"
+          },
+          {
+            "productName": "TINTO DE VERANO LIMON",
+            "amount": "1,00",
+            "unitPrice": "3,00",
+            "totalPrice": "3,00"
+          },
+          {
+            "productName": "ALHAMBRA ESPECIAL",
+            "amount": "1,00",
+            "unitPrice": "3,00",
+            "totalPrice": "3,00"
+          },
+          {
+            "productName": "COCA-COLA ZERO",
+            "amount": "1,00",
+            "unitPrice": "2,80",
+            "totalPrice": "2,80"
+          },
+          {
+            "productName": "AQUARIUS NARANJA",
+            "amount": "1,00",
+            "unitPrice": "2,90",
+            "totalPrice": "2,90"
+          },
+          {
+            "productName": "AMSTEL 0,0 TOSTADA",
+            "amount": "1,00",
+            "unitPrice": "3,00",
+            "totalPrice": "3,00"
+          },
+          {
+            "productName": "TINTO DE VERANO LIMON",
+            "amount": "1,00",
+            "unitPrice": "3,00",
+            "totalPrice": "3,00"
+          },
+          {
+            "productName": "TAPA PRIMERA",
+            "amount": "4,00",
+            "unitPrice": "0,00",
+            "totalPrice": "0,00"
+          },
+          {
+            "productName": "ENTERA CROQUETAS",
+            "amount": "2,00",
+            "unitPrice": "13,00",
+            "totalPrice": "26,00"
+          },
+          {
+            "productName": "ALHAMBRA ESPECIAL",
+            "amount": "3,00",
+            "unitPrice": "3,00",
+            "totalPrice": "9,00"
+          },
+          {
+            "productName": "HEINEKEN 0,0",
+            "amount": "1,00",
+            "unitPrice": "3,00",
+            "totalPrice": "3,00"
+          },
+          {
+            "productName": "ALHAMBRA ESPECIAL",
+            "amount": "1,00",
+            "unitPrice": "3,00",
+            "totalPrice": "3,00"
+          },
+          {
+            "productName": "TINTO DE VERANO LIMON",
+            "amount": "1,00",
+            "unitPrice": "3,00",
+            "totalPrice": "3,00"
+          },
+          {
+            "productName": "COPA AMSTEL",
+            "amount": "1,00",
+            "unitPrice": "3,00",
+            "totalPrice": "3,00"
+          },
+          {
+            "productName": "ALHAMBRA ESPECIAL",
+            "amount": "1,00",
+            "unitPrice": "3,00",
+            "totalPrice": "3,00"
+          },
+          {
+            "productName": "COCA-COLA",
+            "amount": "3,00",
+            "unitPrice": "2,80",
+            "totalPrice": "8,40"
+          },
+          {
+            "productName": "AGUA MINERAL",
+            "amount": "1,00",
+            "unitPrice": "2,20",
+            "totalPrice": "2,20"
+          },
+          {
+            "productName": "AGUA MINERAL",
+            "amount": "1,00",
+            "unitPrice": "2,20",
+            "totalPrice": "2,20"
+          },
+          {
+            "productName": "AGUA MINERAL",
+            "amount": "1,00",
+            "unitPrice": "2,20",
+            "totalPrice": "2,20"
+          },
+          {
+            "productName": "AMSTEL 0,0 TOSTADA",
+            "amount": "1,00",
+            "unitPrice": "3,00",
+            "totalPrice": "3,00"
+          },
+          {
+            "productName": "COPA BLANCO",
+            "amount": "1,00",
+            "unitPrice": "3,20",
+            "totalPrice": "3,20"
+          },
+          {
+            "productName": "TINTO DE VERANO LIMON",
+            "amount": "1,00",
+            "unitPrice": "3,00",
+            "totalPrice": "3,00"
+          },
+          {
+            "productName": "COPA AMSTEL",
+            "amount": "1,00",
+            "unitPrice": "3,00",
+            "totalPrice": "3,00"
+          },
+          {
+            "productName": "AMSTEL 0,0 TOSTADA",
+            "amount": "1,00",
+            "unitPrice": "3,00",
+            "totalPrice": "3,00"
+          },
+          {
+            "productName": "TINTO DE VERANO LIMON",
+            "amount": "2,00",
+            "unitPrice": "3,00",
+            "totalPrice": "6,00"
+          },
+          {
+            "productName": "TINTO DE VERANO BLANCA",
+            "amount": "1,00",
+            "unitPrice": "3,00",
+            "totalPrice": "3,00"
+          },
+          {
+            "productName": "ENTERA BOQUERONES",
+            "amount": "3,00",
+            "unitPrice": "14,00",
+            "totalPrice": "42,00"
+          },
+          {
+            "productName": "COPA BLANCO",
+            "amount": "2,00",
+            "unitPrice": "3,20",
+            "totalPrice": "6,40"
+          },
+          {
+            "productName": "COPA AMSTEL",
+            "amount": "2,00",
+            "unitPrice": "3,00",
+            "totalPrice": "6,00"
+          },
+          {
+            "productName": "ALHAMBRA ESPECIAL",
+            "amount": "1,00",
+            "unitPrice": "3,00",
+            "totalPrice": "3,00"
+          },
+          {
+            "productName": "ALHAMBRA ESPECIAL",
+            "amount": "1,00",
+            "unitPrice": "3,00",
+            "totalPrice": "3,00"
+          },
+          {
+            "productName": "COPA BLANCO",
+            "amount": "1,00",
+            "unitPrice": "3,20",
+            "totalPrice": "3,20"
+          },
+          {
+            "productName": "AGUA MINERAL",
+            "amount": "2,00",
+            "unitPrice": "2,20",
+            "totalPrice": "4,40"
+          }
+        ],
+        "payments": [
+          {
+            "type": "Tarjeta",
+            "amount": "553,90"
+          }
+        ],
+        "printDate": "2025-10-25 16:55:48",
+        "total": "553,90"
+      },
+      "reserva_id": 2220317,
+      "importe_total": 553.9,
+      "num_personas": 23
+    }
+bodyType: application/json
+description: |
+  Frees or cancels a reservation in the Agora POS system.
+
+  Updates the reservation status to allow the table to be used for other bookings. Includes handling for ticket printing and order items.
+headers:
+- enabled: true
+  name: Content-Type
+  value: application/json
+  id: null
+method: PATCH
+name: Liberar reserva
+sortPriority: 31.0
+url: ${[url]}/api/v1/reservas/liberar_reserva
+urlParameters: []

@@ -1,0 +1,33 @@
+type: http_request
+model: http_request
+id: rq_ugEnfNMDmp
+createdAt: 2025-11-19T21:54:07.636828
+updatedAt: 2025-11-19T21:54:07.636828
+workspaceId: wk_vGxjUtTZ2p
+folderId: fl_xyUTbsEpPN
+authentication:
+  token: 1|1BChfZvzDA36VKwKJdbPLiIEGC8Jmp4rU0V4GPIza14639ea
+authenticationType: bearer
+body:
+  text: |-
+    {
+      "sales_account_id": 202006234107,
+      "sales_account_owner_name": "Galina Dejdej",
+      "sales_account_owner_email": "galina@tableo.com",
+      "sales_account_owner_id": 202000020014,
+      "sales_account_parent_sales_account_id": null,
+      "sales_account_cf_tableo_uid": "https://devrms.tableo.com-472",
+      "sales_account_cf_connected_to_tableo": "YES"
+    }
+bodyType: application/json
+description: ''
+headers:
+- enabled: true
+  name: Content-Type
+  value: application/json
+  id: null
+method: POST
+name: Webhook
+sortPriority: 21.0
+url: ${[url]}/api/freshworks/webhook
+urlParameters: []

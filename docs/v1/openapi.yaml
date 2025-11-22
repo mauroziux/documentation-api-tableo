@@ -1,0 +1,2168 @@
+openapi: 3.1.0
+info:
+  title: Tableo API
+  version: v0.0.1
+  description: |-
+    ## Prepare Your Environment:
+
+    Change the url to the `Sandbox Url` for test
+
+    **Production Url:**
+
+    > [https://app.bookia.eu/api/google-server/v3](https://app.bookia.eu/api/google-server/v3) 
+      
+
+    **Sandbox Url:**
+
+    > [https://devrms.tableo.com/api/google-server/v3](https://devrms.tableo.com/api/google-server/v3)
+  contact:
+    name: Contact us
+    url: https://tableo.com/contact/
+    email: dev@tableo.com
+servers:
+  - url: https://devrms.tableo.com
+    description: Sandbox environment server
+  - url: https://app.tableo.com
+    description: Production environment server
+paths:
+  /stripe/webhook:
+    post:
+      summary: webhook
+      description: |
+        Retrieves the list of shifts for the restaurant in the Agora POS system.
+
+        Provides shift information for scheduling and management in the point-of-sale interface.
+      tags:
+        - stripe
+      parameters:
+        - name: account
+          in: query
+          description: ''
+          schema:
+            type: string
+        - name: der
+          in: query
+          description: ''
+          schema:
+            type: string
+        - name: Stripe-Signature
+          in: header
+          required: true
+          description: ''
+          schema:
+            type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                id:
+                  type: string
+                object:
+                  type: string
+                account:
+                  type: string
+                api_version:
+                  type: string
+                  format: date
+                context:
+                  type: string
+                created:
+                  type: integer
+                data:
+                  type: object
+                  properties:
+                    object:
+                      type: object
+                      properties:
+                        id:
+                          type: string
+                        object:
+                          type: string
+                        amount:
+                          type: integer
+                        amount_capturable:
+                          type: integer
+                        amount_details:
+                          type: object
+                          properties:
+                            tip:
+                              type: object
+                              properties: {}
+                          required:
+                            - tip
+                        amount_received:
+                          type: integer
+                        application:
+                          type: string
+                        application_fee_amount:
+                          type: integer
+                        automatic_payment_methods:
+                          type: object
+                        canceled_at:
+                          type: object
+                        cancellation_reason:
+                          type: object
+                        capture_method:
+                          type: string
+                        client_secret:
+                          type: string
+                        confirmation_method:
+                          type: string
+                        created:
+                          type: integer
+                        currency:
+                          type: string
+                        customer:
+                          type: string
+                        description:
+                          type: string
+                        excluded_payment_method_types:
+                          type: object
+                        invoice:
+                          type: object
+                        last_payment_error:
+                          type: object
+                        latest_charge:
+                          type: string
+                        livemode:
+                          type: boolean
+                        metadata:
+                          type: object
+                          properties:
+                            application_fee_amount:
+                              type: integer
+                            product:
+                              type: string
+                            reference:
+                              type: string
+                          required:
+                            - application_fee_amount
+                            - product
+                            - reference
+                        next_action:
+                          type: object
+                        on_behalf_of:
+                          type: object
+                        payment_method:
+                          type: string
+                        payment_method_configuration_details:
+                          type: object
+                        payment_method_options:
+                          type: object
+                          properties:
+                            card:
+                              type: object
+                              properties:
+                                installments:
+                                  type: object
+                                mandate_options:
+                                  type: object
+                                network:
+                                  type: object
+                                request_three_d_secure:
+                                  type: string
+                              required:
+                                - request_three_d_secure
+                          required:
+                            - card
+                        payment_method_types:
+                          type: array
+                          items:
+                            type: string
+                        processing:
+                          type: object
+                        receipt_email:
+                          type: object
+                        review:
+                          type: object
+                        setup_future_usage:
+                          type: object
+                        shipping:
+                          type: object
+                        source:
+                          type: object
+                        statement_descriptor:
+                          type: object
+                        statement_descriptor_suffix:
+                          type: object
+                        status:
+                          type: string
+                        transfer_data:
+                          type: object
+                        transfer_group:
+                          type: object
+                        charges:
+                          type: object
+                          properties:
+                            object:
+                              type: string
+                            data:
+                              type: array
+                              items:
+                                type: object
+                                properties:
+                                  id:
+                                    type: string
+                                  object:
+                                    type: string
+                                  amount:
+                                    type: integer
+                                  amount_captured:
+                                    type: integer
+                                  amount_refunded:
+                                    type: integer
+                                  application:
+                                    type: string
+                                  application_fee:
+                                    type: string
+                                  application_fee_amount:
+                                    type: integer
+                                  balance_transaction:
+                                    type: string
+                                  billing_details:
+                                    type: object
+                                    properties:
+                                      address:
+                                        type: object
+                                        properties:
+                                          city:
+                                            type: string
+                                          country:
+                                            type: string
+                                          line1:
+                                            type: string
+                                          line2:
+                                            type: string
+                                          postal_code:
+                                            type: string
+                                          state:
+                                            type: string
+                                        required:
+                                          - city
+                                          - country
+                                          - line1
+                                          - line2
+                                          - postal_code
+                                          - state
+                                      email:
+                                        type: string
+                                      name:
+                                        type: string
+                                      phone:
+                                        type: object
+                                      tax_id:
+                                        type: object
+                                    required:
+                                      - address
+                                      - email
+                                      - name
+                                  calculated_statement_descriptor:
+                                    type: string
+                                  captured:
+                                    type: boolean
+                                  created:
+                                    type: integer
+                                  currency:
+                                    type: string
+                                  customer:
+                                    type: string
+                                  description:
+                                    type: string
+                                  destination:
+                                    type: object
+                                  dispute:
+                                    type: object
+                                  disputed:
+                                    type: boolean
+                                  failure_balance_transaction:
+                                    type: object
+                                  failure_code:
+                                    type: object
+                                  failure_message:
+                                    type: object
+                                  fraud_details:
+                                    type: object
+                                    properties: {}
+                                  invoice:
+                                    type: object
+                                  livemode:
+                                    type: boolean
+                                  metadata:
+                                    type: object
+                                    properties:
+                                      application_fee_amount:
+                                        type: integer
+                                      product:
+                                        type: string
+                                      reference:
+                                        type: string
+                                    required:
+                                      - application_fee_amount
+                                      - product
+                                      - reference
+                                  on_behalf_of:
+                                    type: object
+                                  order:
+                                    type: object
+                                  outcome:
+                                    type: object
+                                    properties:
+                                      advice_code:
+                                        type: object
+                                      network_advice_code:
+                                        type: object
+                                      network_decline_code:
+                                        type: object
+                                      network_status:
+                                        type: string
+                                      reason:
+                                        type: object
+                                      risk_level:
+                                        type: string
+                                      seller_message:
+                                        type: string
+                                      type:
+                                        type: string
+                                    required:
+                                      - network_status
+                                      - risk_level
+                                      - seller_message
+                                      - type
+                                  paid:
+                                    type: boolean
+                                  payment_intent:
+                                    type: string
+                                  payment_method:
+                                    type: string
+                                  payment_method_details:
+                                    type: object
+                                    properties:
+                                      card:
+                                        type: object
+                                        properties:
+                                          amount_authorized:
+                                            type: integer
+                                          authorization_code:
+                                            type: string
+                                          brand:
+                                            type: string
+                                          checks:
+                                            type: object
+                                            properties:
+                                              address_line1_check:
+                                                type: string
+                                              address_postal_code_check:
+                                                type: string
+                                              cvc_check:
+                                                type: object
+                                            required:
+                                              - address_line1_check
+                                              - address_postal_code_check
+                                          country:
+                                            type: string
+                                          exp_month:
+                                            type: integer
+                                          exp_year:
+                                            type: integer
+                                          extended_authorization:
+                                            type: object
+                                            properties:
+                                              status:
+                                                type: string
+                                            required:
+                                              - status
+                                          fingerprint:
+                                            type: string
+                                          funding:
+                                            type: string
+                                          incremental_authorization:
+                                            type: object
+                                            properties:
+                                              status:
+                                                type: string
+                                            required:
+                                              - status
+                                          installments:
+                                            type: object
+                                          last4:
+                                            type: integer
+                                          mandate:
+                                            type: object
+                                          multicapture:
+                                            type: object
+                                            properties:
+                                              status:
+                                                type: string
+                                            required:
+                                              - status
+                                          network:
+                                            type: string
+                                          network_token:
+                                            type: object
+                                            properties:
+                                              used:
+                                                type: boolean
+                                            required:
+                                              - used
+                                          network_transaction_id:
+                                            type: string
+                                          overcapture:
+                                            type: object
+                                            properties:
+                                              maximum_amount_capturable:
+                                                type: integer
+                                              status:
+                                                type: string
+                                            required:
+                                              - maximum_amount_capturable
+                                              - status
+                                          regulated_status:
+                                            type: string
+                                          three_d_secure:
+                                            type: object
+                                          wallet:
+                                            type: object
+                                            properties:
+                                              apple_pay:
+                                                type: object
+                                                properties:
+                                                  type:
+                                                    type: string
+                                                required:
+                                                  - type
+                                              dynamic_last4:
+                                                type: integer
+                                              type:
+                                                type: string
+                                            required:
+                                              - apple_pay
+                                              - dynamic_last4
+                                              - type
+                                        required:
+                                          - amount_authorized
+                                          - authorization_code
+                                          - brand
+                                          - checks
+                                          - country
+                                          - exp_month
+                                          - exp_year
+                                          - extended_authorization
+                                          - fingerprint
+                                          - funding
+                                          - incremental_authorization
+                                          - last4
+                                          - multicapture
+                                          - network
+                                          - network_token
+                                          - network_transaction_id
+                                          - overcapture
+                                          - regulated_status
+                                          - wallet
+                                      type:
+                                        type: string
+                                    required:
+                                      - card
+                                      - type
+                                  radar_options:
+                                    type: object
+                                    properties: {}
+                                  receipt_email:
+                                    type: object
+                                  receipt_number:
+                                    type: object
+                                  receipt_url:
+                                    type: string
+                                  refunded:
+                                    type: boolean
+                                  refunds:
+                                    type: object
+                                    properties:
+                                      object:
+                                        type: string
+                                      data:
+                                        type: array
+                                        items:
+                                          type: object
+                                      has_more:
+                                        type: boolean
+                                      total_count:
+                                        type: integer
+                                      url:
+                                        type: string
+                                    required:
+                                      - object
+                                      - data
+                                      - has_more
+                                      - total_count
+                                      - url
+                                  review:
+                                    type: object
+                                  shipping:
+                                    type: object
+                                  source:
+                                    type: object
+                                  source_transfer:
+                                    type: object
+                                  statement_descriptor:
+                                    type: object
+                                  statement_descriptor_suffix:
+                                    type: object
+                                  status:
+                                    type: string
+                                  transfer_data:
+                                    type: object
+                                  transfer_group:
+                                    type: object
+                                required:
+                                  - id
+                                  - object
+                                  - amount
+                                  - amount_captured
+                                  - amount_refunded
+                                  - application
+                                  - application_fee
+                                  - application_fee_amount
+                                  - balance_transaction
+                                  - billing_details
+                                  - calculated_statement_descriptor
+                                  - captured
+                                  - created
+                                  - currency
+                                  - customer
+                                  - description
+                                  - disputed
+                                  - fraud_details
+                                  - livemode
+                                  - metadata
+                                  - outcome
+                                  - paid
+                                  - payment_intent
+                                  - payment_method
+                                  - payment_method_details
+                                  - radar_options
+                                  - receipt_url
+                                  - refunded
+                                  - refunds
+                                  - status
+                            has_more:
+                              type: boolean
+                            total_count:
+                              type: integer
+                            url:
+                              type: string
+                          required:
+                            - object
+                            - data
+                            - has_more
+                            - total_count
+                            - url
+                      required:
+                        - id
+                        - object
+                        - amount
+                        - amount_capturable
+                        - amount_details
+                        - amount_received
+                        - application
+                        - application_fee_amount
+                        - capture_method
+                        - client_secret
+                        - confirmation_method
+                        - created
+                        - currency
+                        - customer
+                        - description
+                        - latest_charge
+                        - livemode
+                        - metadata
+                        - payment_method
+                        - payment_method_options
+                        - payment_method_types
+                        - status
+                        - charges
+                  required:
+                    - object
+                livemode:
+                  type: boolean
+                pending_webhooks:
+                  type: integer
+                request:
+                  type: object
+                  properties:
+                    id:
+                      type: object
+                    idempotency_key:
+                      type: string
+                  required:
+                    - idempotency_key
+                type:
+                  type: string
+              required:
+                - id
+                - object
+                - account
+                - api_version
+                - context
+                - created
+                - data
+                - livemode
+                - pending_webhooks
+                - request
+                - type
+            example:
+              id: evt_3SAxRtRJixx9kysc0O7yAuI2
+              object: event
+              account: acct_1QicWFRJixx9kysc
+              api_version: '2020-08-27'
+              context: acct_1QicWFRJixx9kysc
+              created: 1758738645
+              data:
+                object:
+                  id: pi_3SAxRtRJixx9kysc0YKn1BD3
+                  object: payment_intent
+                  amount: 15000
+                  amount_capturable: 0
+                  amount_details:
+                    tip: {}
+                  amount_received: 15000
+                  application: ca_LU2ufYDftf2pONh1oWK0FgWoydRvD9qI
+                  application_fee_amount: 177
+                  automatic_payment_methods: null
+                  canceled_at: null
+                  cancellation_reason: null
+                  capture_method: automatic
+                  client_secret: pi_3SAxRtRJixx9kysc0YKn1BD3_secret_m8A3IqlhllcMEqOObH8g1xjhL
+                  confirmation_method: automatic
+                  created: 1758738593
+                  currency: eur
+                  customer: cus_T7Bq0ho2ewBZPm
+                  description: 'Tableo Booking Reference: WY4-P07'
+                  excluded_payment_method_types: null
+                  invoice: null
+                  last_payment_error: null
+                  latest_charge: ch_3SAxRtRJixx9kysc0CUOpzUj
+                  livemode: true
+                  metadata:
+                    application_fee_amount: '177'
+                    product: tableo_products
+                    reference: WY4-P07
+                  next_action: null
+                  on_behalf_of: null
+                  payment_method: pm_1SAxSgRJixx9kyscE0smHHnr
+                  payment_method_configuration_details: null
+                  payment_method_options:
+                    card:
+                      installments: null
+                      mandate_options: null
+                      network: null
+                      request_three_d_secure: automatic
+                  payment_method_types:
+                    - card
+                  processing: null
+                  receipt_email: null
+                  review: null
+                  setup_future_usage: null
+                  shipping: null
+                  source: null
+                  statement_descriptor: null
+                  statement_descriptor_suffix: null
+                  status: succeeded
+                  transfer_data: null
+                  transfer_group: null
+                  charges:
+                    object: list
+                    data:
+                      - id: ch_3SAxRtRJixx9kysc0CUOpzUj
+                        object: charge
+                        amount: 15000
+                        amount_captured: 15000
+                        amount_refunded: 0
+                        application: ca_LU2ufYDftf2pONh1oWK0FgWoydRvD9qI
+                        application_fee: fee_1SAxSjRJixx9kysct7TaLQTI
+                        application_fee_amount: 177
+                        balance_transaction: txn_3SAxRtRJixx9kysc0aPQ0Wo3
+                        billing_details:
+                          address:
+                            city: Swieqi
+                            country: MT
+                            line1: '74, Pearl Residence, Apt 4 '
+                            line2: 'Fuq Il-Gonna '
+                            postal_code: SWQ 3245
+                            state: ''
+                          email: glenn.d.borg@gmail.com
+                          name: Glenn Borg
+                          phone: null
+                          tax_id: null
+                        calculated_statement_descriptor: BASTIONS VIEW LTD
+                        captured: true
+                        created: 1758738644
+                        currency: eur
+                        customer: cus_T7Bq0ho2ewBZPm
+                        description: 'Tableo Booking Reference: WY4-P07'
+                        destination: null
+                        dispute: null
+                        disputed: false
+                        failure_balance_transaction: null
+                        failure_code: null
+                        failure_message: null
+                        fraud_details: {}
+                        invoice: null
+                        livemode: true
+                        metadata:
+                          application_fee_amount: '177'
+                          product: tableo_products
+                          reference: WY4-P07
+                        on_behalf_of: null
+                        order: null
+                        outcome:
+                          advice_code: null
+                          network_advice_code: null
+                          network_decline_code: null
+                          network_status: approved_by_network
+                          reason: null
+                          risk_level: normal
+                          seller_message: Payment complete.
+                          type: authorized
+                        paid: true
+                        payment_intent: pi_3SAxRtRJixx9kysc0YKn1BD3
+                        payment_method: pm_1SAxSgRJixx9kyscE0smHHnr
+                        payment_method_details:
+                          card:
+                            amount_authorized: 15000
+                            authorization_code: LCRISX
+                            brand: mastercard
+                            checks:
+                              address_line1_check: fail
+                              address_postal_code_check: fail
+                              cvc_check: null
+                            country: MT
+                            exp_month: 4
+                            exp_year: 2028
+                            extended_authorization:
+                              status: disabled
+                            fingerprint: eHgRDmdMNxZQZZ6Z
+                            funding: debit
+                            incremental_authorization:
+                              status: unavailable
+                            installments: null
+                            last4: '0620'
+                            mandate: null
+                            multicapture:
+                              status: unavailable
+                            network: mastercard
+                            network_token:
+                              used: false
+                            network_transaction_id: MDHM0J8HW0924
+                            overcapture:
+                              maximum_amount_capturable: 15000
+                              status: unavailable
+                            regulated_status: unregulated
+                            three_d_secure: null
+                            wallet:
+                              apple_pay:
+                                type: apple_pay
+                              dynamic_last4: '3279'
+                              type: apple_pay
+                          type: card
+                        radar_options: {}
+                        receipt_email: null
+                        receipt_number: null
+                        receipt_url: https://pay.stripe.com/receipts/payment/CAcQARoXChVhY2N0XzFRaWNXRlJKaXh4OWt5c2Mo1fHQxgYyBu8AWhH01josFszPrssgkVAIPAmV3Xu4VGWUEXlvIGFcLnkBl6PbWHKSIV53AubQEapzk7Q
+                        refunded: false
+                        refunds:
+                          object: list
+                          data: []
+                          has_more: false
+                          total_count: 0
+                          url: /v1/charges/ch_3SAxRtRJixx9kysc0CUOpzUj/refunds
+                        review: null
+                        shipping: null
+                        source: null
+                        source_transfer: null
+                        statement_descriptor: null
+                        statement_descriptor_suffix: null
+                        status: succeeded
+                        transfer_data: null
+                        transfer_group: null
+                    has_more: false
+                    total_count: 1
+                    url: /v1/charges?payment_intent=pi_3SAxRtRJixx9kysc0YKn1BD3
+              livemode: true
+              pending_webhooks: 1
+              request:
+                id: null
+                idempotency_key: 83a48a04-ed6f-4768-8a31-43950a3704ee
+              type: payment_intent.succeeded
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+                properties: {}
+  /widget/:slug/service-times:
+    get:
+      summary: widget service times
+      description: |
+        Retrieves available service times for restaurant bookings via the public widget interface.
+
+        Allows front-end widgets to query available dining times based on date, party size, and restaurant.
+
+        **Parameters:**
+        - `:slug` (path): Restaurant identifier (string)
+        - `day` (query): Desired date for service (date format)
+        - `booking_date` (query): Confirmation date (date format)
+        - `no_of_adults` (query): Number of adult guests (integer)
+        - `no_of_children` (query): Number of children (integer)
+
+        Returns an array of available time slots for the specified restaurant and date.
+      tags:
+        - widget
+      parameters:
+        - name: ':slug'
+          in: query
+          description: ''
+          schema:
+            type: string
+        - name: day
+          in: query
+          description: ''
+          schema:
+            type: string
+            format: date
+        - name: booking_date
+          in: query
+          description: ''
+          schema:
+            type: string
+            format: date
+        - name: no_of_adults
+          in: query
+          description: ''
+          schema:
+            type: integer
+        - name: no_of_children
+          in: query
+          description: ''
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+                properties: {}
+  /api/google-server/v3/BatchAvailabilityLookup:
+    post:
+      summary: BatchAvailabilityLookup
+      description: |
+        Checks availability for multiple slot times with resource constraints. Used by Reserve with Google to validate booking options before presentation.
+
+        This endpoint verifies that requested appointment slots are currently valid and available, allowing the system to ensure only current slots are presented to users during the reservation flow.
+
+        **Request Parameters:**
+        - `merchant_id`: String, ID of the merchant for which availability is checked.
+        - `slot_time`: Array of objects, each representing a time slot with:
+          - `service_id`: String (e.g., "reservation")
+          - `start_sec`: Integer (Unix timestamp for start time)
+          - `duration_sec`: Integer (duration in seconds, optional)
+          - `resource_ids`: Object with `room_id` (string) and `party_size` (integer)
+
+        **Response:**
+        Returns an object with `slot_time_availability` array, each item containing the original `slot_time` and a boolean `available` field indicating if the slot is bookable.
+      tags:
+        - google server
+      parameters: []
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                merchant_id:
+                  type: string
+                slot_time:
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      duration_sec:
+                        type: integer
+                      resource_ids:
+                        type: object
+                        properties:
+                          room_id:
+                            type: integer
+                          party_size:
+                            type: integer
+                        required:
+                          - room_id
+                          - party_size
+                      service_id:
+                        type: string
+                      start_sec:
+                        type: string
+                    required:
+                      - duration_sec
+                      - resource_ids
+                      - service_id
+                      - start_sec
+              required:
+                - merchant_id
+                - slot_time
+            example:
+              merchant_id: ${[merchant_id]}
+              slot_time:
+                - duration_sec: '5400'
+                  resource_ids:
+                    room_id: '2'
+                    party_size: 2
+                  service_id: reservation
+                  start_sec: ${[ dateAdd(days='1', format='X') ]}
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+                properties: {}
+  /api/google-server/v3/SetMarketingPreference:
+    post:
+      summary: SetMarketingPreferenceRequest
+      description: '# SetMarketingPreferenceRequest method'
+      tags:
+        - google server
+      parameters: []
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                user_information:
+                  type: object
+                  properties:
+                    email:
+                      type: string
+                    family_name:
+                      type: string
+                    given_name:
+                      type: string
+                    telephone:
+                      type: string
+                    user_id:
+                      type: integer
+                  required:
+                    - email
+                    - family_name
+                    - given_name
+                    - telephone
+                    - user_id
+                user_to_receive_marketing:
+                  type: integer
+              required:
+                - user_information
+                - user_to_receive_marketing
+            example:
+              user_information:
+                email: mauroziux@gmail.com
+                family_name: Suarez Vega
+                given_name: Mauricio
+                telephone: +356 9993 9607
+                user_id: '13126198240951105170'
+              user_to_receive_marketing: 1
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+                properties: {}
+  /api/v1/reservas/sentar_reserva:
+    patch:
+      summary: Sentar reserva
+      description: ''
+      tags:
+        - agora
+      parameters: []
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                reserva_id:
+                  type: integer
+              required:
+                - reserva_id
+            example:
+              reserva_id: 2043472
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+                properties: {}
+  /api/freshworks/restaurants:
+    get:
+      summary: search restaurant
+      description: ''
+      tags:
+        - freshworks
+      parameters: []
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+                properties: {}
+  /widget/:slug:
+    get:
+      summary: widget
+      description: ''
+      tags:
+        - widget
+      parameters:
+        - name: ':slug'
+          in: query
+          description: ''
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+                properties: {}
+  /api/v1/reservas/liberar_reserva:
+    patch:
+      summary: Liberar reserva
+      description: |
+        Frees or cancels a reservation in the Agora POS system.
+
+        Updates the reservation status to allow the table to be used for other bookings. Includes handling for ticket printing and order items.
+      tags:
+        - agora
+      parameters: []
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                ticket_json:
+                  type: object
+                  properties:
+                    id_reserv:
+                      type: integer
+                    items:
+                      type: array
+                      items:
+                        type: object
+                        properties:
+                          productName:
+                            type: string
+                          amount:
+                            type: string
+                          unitPrice:
+                            type: string
+                          totalPrice:
+                            type: string
+                        required:
+                          - productName
+                          - amount
+                          - unitPrice
+                          - totalPrice
+                    payments:
+                      type: array
+                      items:
+                        type: object
+                        properties:
+                          type:
+                            type: string
+                          amount:
+                            type: string
+                        required:
+                          - type
+                          - amount
+                    printDate:
+                      type: string
+                    total:
+                      type: string
+                  required:
+                    - id_reserv
+                    - items
+                    - payments
+                    - printDate
+                    - total
+                reserva_id:
+                  type: integer
+                importe_total:
+                  type: number
+                num_personas:
+                  type: integer
+              required:
+                - ticket_json
+                - reserva_id
+                - importe_total
+                - num_personas
+            example:
+              ticket_json:
+                id_reserv: '2220317'
+                items:
+                  - productName: ALHAMBRA ESPECIAL
+                    amount: 3,00
+                    unitPrice: 3,00
+                    totalPrice: 9,00
+                  - productName: TINTO DE VERANO LIMON
+                    amount: 2,00
+                    unitPrice: 3,00
+                    totalPrice: 6,00
+                  - productName: ALHAMBRA ESPECIAL
+                    amount: 1,00
+                    unitPrice: 3,00
+                    totalPrice: 3,00
+                  - productName: TAPA PRIMERA
+                    amount: 6,00
+                    unitPrice: 0,00
+                    totalPrice: 0,00
+                  - productName: COPA AMSTEL
+                    amount: 1,00
+                    unitPrice: 3,00
+                    totalPrice: 3,00
+                  - productName: TINTO DE VERANO LIMON
+                    amount: 2,00
+                    unitPrice: 3,00
+                    totalPrice: 6,00
+                  - productName: AGUA MINERAL
+                    amount: 2,00
+                    unitPrice: 2,20
+                    totalPrice: 4,40
+                  - productName: TAPA PRIMERA
+                    amount: 5,00
+                    unitPrice: 0,00
+                    totalPrice: 0,00
+                  - productName: ALHAMBRA ESPECIAL
+                    amount: 1,00
+                    unitPrice: 3,00
+                    totalPrice: 3,00
+                  - productName: TAPA PRIMERA
+                    amount: 1,00
+                    unitPrice: 0,00
+                    totalPrice: 0,00
+                  - productName: COPA AMSTEL
+                    amount: 1,00
+                    unitPrice: 3,00
+                    totalPrice: 3,00
+                  - productName: AMSTEL 0,0 TOSTADA
+                    amount: 1,00
+                    unitPrice: 3,00
+                    totalPrice: 3,00
+                  - productName: TINTO DE VERANO LIMON
+                    amount: 1,00
+                    unitPrice: 3,00
+                    totalPrice: 3,00
+                  - productName: ALHAMBRA ESPECIAL
+                    amount: 1,00
+                    unitPrice: 3,00
+                    totalPrice: 3,00
+                  - productName: TAPA PRIMERA
+                    amount: 5,00
+                    unitPrice: 0,00
+                    totalPrice: 0,00
+                  - productName: ALHAMBRA ESPECIAL
+                    amount: 1,00
+                    unitPrice: 3,00
+                    totalPrice: 3,00
+                  - productName: TAPA PRIMERA
+                    amount: 1,00
+                    unitPrice: 0,00
+                    totalPrice: 0,00
+                  - productName: ALHAMBRA ESPECIAL
+                    amount: 4,00
+                    unitPrice: 3,00
+                    totalPrice: 12,00
+                  - productName: COCA-COLA
+                    amount: 2,00
+                    unitPrice: 2,80
+                    totalPrice: 5,60
+                  - productName: TAPA PRIMERA
+                    amount: 5,00
+                    unitPrice: 0,00
+                    totalPrice: 0,00
+                  - productName: ALHAMBRA ESPECIAL
+                    amount: 1,00
+                    unitPrice: 3,00
+                    totalPrice: 3,00
+                  - productName: ENTERA FINGERS
+                    amount: 3,00
+                    unitPrice: 13,00
+                    totalPrice: 39,00
+                  - productName: TOMATE ALIÑAO
+                    amount: 3,00
+                    unitPrice: 8,00
+                    totalPrice: 24,00
+                  - productName: ENTERA SECRETO
+                    amount: 3,00
+                    unitPrice: 15,00
+                    totalPrice: 45,00
+                  - productName: ENTERA JAMON ASADO
+                    amount: 3,00
+                    unitPrice: 13,00
+                    totalPrice: 39,00
+                  - productName: HUEVOS ROTOS CON JAMON
+                    amount: 2,00
+                    unitPrice: 14,00
+                    totalPrice: 28,00
+                  - productName: HUEVOS ROTOS SETAS Y LANGOSTINOS
+                    amount: 2,00
+                    unitPrice: 15,00
+                    totalPrice: 30,00
+                  - productName: ENTERA CROQUETAS
+                    amount: 2,00
+                    unitPrice: 13,00
+                    totalPrice: 26,00
+                  - productName: ENTERA CALAMARES
+                    amount: 3,00
+                    unitPrice: 15,00
+                    totalPrice: 45,00
+                  - productName: LANGOSTINOS AL PIL-PIL
+                    amount: 1,00
+                    unitPrice: 15,00
+                    totalPrice: 15,00
+                  - productName: COPA AMSTEL
+                    amount: 2,00
+                    unitPrice: 3,00
+                    totalPrice: 6,00
+                  - productName: TINTO DE VERANO BLANCA
+                    amount: 1,00
+                    unitPrice: 3,00
+                    totalPrice: 3,00
+                  - productName: AMSTEL 0,0 TOSTADA
+                    amount: 1,00
+                    unitPrice: 3,00
+                    totalPrice: 3,00
+                  - productName: TINTO DE VERANO LIMON
+                    amount: 1,00
+                    unitPrice: 3,00
+                    totalPrice: 3,00
+                  - productName: ALHAMBRA ESPECIAL
+                    amount: 1,00
+                    unitPrice: 3,00
+                    totalPrice: 3,00
+                  - productName: TINTO DE VERANO LIMON
+                    amount: 1,00
+                    unitPrice: 3,00
+                    totalPrice: 3,00
+                  - productName: ALHAMBRA ESPECIAL
+                    amount: 1,00
+                    unitPrice: 3,00
+                    totalPrice: 3,00
+                  - productName: COCA-COLA ZERO
+                    amount: 1,00
+                    unitPrice: 2,80
+                    totalPrice: 2,80
+                  - productName: AQUARIUS NARANJA
+                    amount: 1,00
+                    unitPrice: 2,90
+                    totalPrice: 2,90
+                  - productName: AMSTEL 0,0 TOSTADA
+                    amount: 1,00
+                    unitPrice: 3,00
+                    totalPrice: 3,00
+                  - productName: TINTO DE VERANO LIMON
+                    amount: 1,00
+                    unitPrice: 3,00
+                    totalPrice: 3,00
+                  - productName: TAPA PRIMERA
+                    amount: 4,00
+                    unitPrice: 0,00
+                    totalPrice: 0,00
+                  - productName: ENTERA CROQUETAS
+                    amount: 2,00
+                    unitPrice: 13,00
+                    totalPrice: 26,00
+                  - productName: ALHAMBRA ESPECIAL
+                    amount: 3,00
+                    unitPrice: 3,00
+                    totalPrice: 9,00
+                  - productName: HEINEKEN 0,0
+                    amount: 1,00
+                    unitPrice: 3,00
+                    totalPrice: 3,00
+                  - productName: ALHAMBRA ESPECIAL
+                    amount: 1,00
+                    unitPrice: 3,00
+                    totalPrice: 3,00
+                  - productName: TINTO DE VERANO LIMON
+                    amount: 1,00
+                    unitPrice: 3,00
+                    totalPrice: 3,00
+                  - productName: COPA AMSTEL
+                    amount: 1,00
+                    unitPrice: 3,00
+                    totalPrice: 3,00
+                  - productName: ALHAMBRA ESPECIAL
+                    amount: 1,00
+                    unitPrice: 3,00
+                    totalPrice: 3,00
+                  - productName: COCA-COLA
+                    amount: 3,00
+                    unitPrice: 2,80
+                    totalPrice: 8,40
+                  - productName: AGUA MINERAL
+                    amount: 1,00
+                    unitPrice: 2,20
+                    totalPrice: 2,20
+                  - productName: AGUA MINERAL
+                    amount: 1,00
+                    unitPrice: 2,20
+                    totalPrice: 2,20
+                  - productName: AGUA MINERAL
+                    amount: 1,00
+                    unitPrice: 2,20
+                    totalPrice: 2,20
+                  - productName: AMSTEL 0,0 TOSTADA
+                    amount: 1,00
+                    unitPrice: 3,00
+                    totalPrice: 3,00
+                  - productName: COPA BLANCO
+                    amount: 1,00
+                    unitPrice: 3,20
+                    totalPrice: 3,20
+                  - productName: TINTO DE VERANO LIMON
+                    amount: 1,00
+                    unitPrice: 3,00
+                    totalPrice: 3,00
+                  - productName: COPA AMSTEL
+                    amount: 1,00
+                    unitPrice: 3,00
+                    totalPrice: 3,00
+                  - productName: AMSTEL 0,0 TOSTADA
+                    amount: 1,00
+                    unitPrice: 3,00
+                    totalPrice: 3,00
+                  - productName: TINTO DE VERANO LIMON
+                    amount: 2,00
+                    unitPrice: 3,00
+                    totalPrice: 6,00
+                  - productName: TINTO DE VERANO BLANCA
+                    amount: 1,00
+                    unitPrice: 3,00
+                    totalPrice: 3,00
+                  - productName: ENTERA BOQUERONES
+                    amount: 3,00
+                    unitPrice: 14,00
+                    totalPrice: 42,00
+                  - productName: COPA BLANCO
+                    amount: 2,00
+                    unitPrice: 3,20
+                    totalPrice: 6,40
+                  - productName: COPA AMSTEL
+                    amount: 2,00
+                    unitPrice: 3,00
+                    totalPrice: 6,00
+                  - productName: ALHAMBRA ESPECIAL
+                    amount: 1,00
+                    unitPrice: 3,00
+                    totalPrice: 3,00
+                  - productName: ALHAMBRA ESPECIAL
+                    amount: 1,00
+                    unitPrice: 3,00
+                    totalPrice: 3,00
+                  - productName: COPA BLANCO
+                    amount: 1,00
+                    unitPrice: 3,20
+                    totalPrice: 3,20
+                  - productName: AGUA MINERAL
+                    amount: 2,00
+                    unitPrice: 2,20
+                    totalPrice: 4,40
+                payments:
+                  - type: Tarjeta
+                    amount: 553,90
+                printDate: '2025-10-25 16:55:48'
+                total: 553,90
+              reserva_id: 2220317
+              importe_total: 553.9
+              num_personas: 23
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+                properties: {}
+  /api/v1/mesas:
+    get:
+      summary: Mesas
+      description: |
+        Retrieves a list of tables available in the restaurant for the Agora POS system.
+
+        This endpoint provides table information used for managing reservations and seating in the point-of-sale interface.
+      tags:
+        - agora
+      parameters: []
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+                properties: {}
+  /api/google-server/v3/CheckAvailability:
+    post:
+      summary: CheckAvailability
+      description: |-
+        # CheckAvailability method
+
+        When a CheckAvailability is issued, the partner booking server verifies that the requested appointment slots are currently valid and available. This can be used by Reserve with Google to ensure that only current slots are presented to users during the reservation flow.
+      tags:
+        - google server
+      parameters: []
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                merchant_id:
+                  type: string
+                slot_time:
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      duration_sec:
+                        type: integer
+                      resource_ids:
+                        type: object
+                        properties:
+                          party_size:
+                            type: integer
+                        required:
+                          - party_size
+                      service_id:
+                        type: string
+                      start_sec:
+                        type: integer
+                    required:
+                      - duration_sec
+                      - resource_ids
+                      - service_id
+                      - start_sec
+              required:
+                - merchant_id
+                - slot_time
+            example:
+              merchant_id: ${[merchant_id]}
+              slot_time:
+                - duration_sec: '1800'
+                  resource_ids:
+                    party_size: 5
+                  service_id: reservation
+                  start_sec: '1759514400'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+                properties: {}
+  /api/v1/reservas:
+    get:
+      summary: Reservas
+      description: ''
+      tags:
+        - agora
+      parameters: []
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+                properties: {}
+  /widget/:slug/google-payment-redirect:
+    get:
+      summary: widget from google
+      description: ''
+      tags:
+        - widget
+      parameters:
+        - name: ':slug'
+          in: query
+          description: ''
+          schema:
+            type: string
+        - name: date
+          in: query
+          description: ''
+          schema:
+            type: integer
+            format: int64
+        - name: no_of_adults
+          in: query
+          description: ''
+          schema:
+            type: integer
+        - name: dining
+          in: query
+          description: ''
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+                properties: {}
+  /api/google-server/v3/availabilities/:merchant_id:
+    get:
+      summary: availabilities
+      description: |
+        This method returns avaialbility for a specific merchant
+      tags:
+        - google server
+      parameters:
+        - name: ':merchant_id'
+          in: query
+          description: ''
+          schema:
+            type: string
+        - name: days
+          in: query
+          description: ''
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+                properties: {}
+  /api/freshworks/webhook/slack:
+    post:
+      summary: Webhook Slack
+      description: ''
+      tags:
+        - freshworks
+      parameters: []
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                phone_call_id:
+                  type: integer
+                phone_call_owner_name:
+                  type: string
+                phone_call_call_status:
+                  type: string
+                phone_call_created_at:
+                  type: string
+                phone_call_outcome_id:
+                  type: integer
+                phone_call_entity_first_name:
+                  type: string
+                phone_call_entity_last_name:
+                  type: string
+                phone_call_entity_owner_name:
+                  type: string
+                phone_call_entity_sales_account_cf_tableo_uid:
+                  type: integer
+                phone_call_entity_country:
+                  type: string
+                phone_call_entity_cf_country_code:
+                  type: string
+                phone_call_entity_recent_note:
+                  type: string
+                phone_call_entity_sales_account_recent_note:
+                  type: object
+                phone_call_entity_id:
+                  type: integer
+                phone_call_entity_sales_account_id:
+                  type: integer
+                phone_call_entity_sales_account_name:
+                  type: string
+                phone_call_call_direction:
+                  type: string
+                phone_call_is_manual:
+                  type: string
+                phone_call_entity_sales_account_cf_google_restaurant_name:
+                  type: string
+                type:
+                  type: string
+              required:
+                - phone_call_id
+                - phone_call_owner_name
+                - phone_call_call_status
+                - phone_call_created_at
+                - phone_call_outcome_id
+                - phone_call_entity_first_name
+                - phone_call_entity_last_name
+                - phone_call_entity_owner_name
+                - phone_call_entity_sales_account_cf_tableo_uid
+                - phone_call_entity_country
+                - phone_call_entity_cf_country_code
+                - phone_call_entity_recent_note
+                - phone_call_entity_id
+                - phone_call_entity_sales_account_id
+                - phone_call_entity_sales_account_name
+                - phone_call_call_direction
+                - phone_call_is_manual
+                - phone_call_entity_sales_account_cf_google_restaurant_name
+                - type
+            example:
+              phone_call_id: 202000945524
+              phone_call_owner_name: Dev Team
+              phone_call_call_status: Completed
+              phone_call_created_at: 01-07-2025 18:47:50
+              phone_call_outcome_id: 202001529630
+              phone_call_entity_first_name: Agriturismo
+              phone_call_entity_last_name: Puntalizzu
+              phone_call_entity_owner_name: Monica Dang Minh
+              phone_call_entity_sales_account_cf_tableo_uid: '5825'
+              phone_call_entity_country: Italy
+              phone_call_entity_cf_country_code: IT
+              phone_call_entity_recent_note: mauricio test
+              phone_call_entity_sales_account_recent_note: null
+              phone_call_entity_id: 202032002917
+              phone_call_entity_sales_account_id: 202004368087
+              phone_call_entity_sales_account_name: Puntalizzu
+              phone_call_call_direction: Outgoing
+              phone_call_is_manual: 'Yes'
+              phone_call_entity_sales_account_cf_google_restaurant_name: Agriturismo Puntalizzu, Appartamenti - Wines Food Homemade products, Hiking, MTB excursions, Outdoor activities
+              type: Contact
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+                properties: {}
+  /api/google-server/v3/CreateBooking:
+    post:
+      summary: CreateBooking
+      description: |
+        # CreateBooking method
+
+        The client requests to create a booking. The partner backend makes a booking for the requested slot, and returns the slot upon success, or business logic error (e.g. if the slot has become unavailable, or if payment is invalid, etc.) upon failure.
+
+        Please note that business logic errors should be returned in the `CreateBookingResponse.booking_failure` field, rather than via a non-200 HTTP response code.
+      tags:
+        - google server
+      parameters: []
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                idempotency_token:
+                  type: integer
+                payment_information:
+                  type: object
+                  properties:
+                    prepayment_status:
+                      type: string
+                  required:
+                    - prepayment_status
+                slot:
+                  type: object
+                  properties:
+                    confirmation_mode:
+                      type: string
+                    duration_sec:
+                      type: integer
+                    merchant_id:
+                      type: string
+                    resources:
+                      type: object
+                      properties:
+                        party_size:
+                          type: integer
+                        room_id:
+                          type: integer
+                      required:
+                        - party_size
+                        - room_id
+                    service_id:
+                      type: string
+                    start_sec:
+                      type: integer
+                  required:
+                    - confirmation_mode
+                    - duration_sec
+                    - merchant_id
+                    - resources
+                    - service_id
+                    - start_sec
+                user_information:
+                  type: object
+                  properties:
+                    email:
+                      type: object
+                    family_name:
+                      type: object
+                    given_name:
+                      type: string
+                    telephone:
+                      type: integer
+                    user_id:
+                      type: object
+                  required:
+                    - given_name
+                    - telephone
+                source:
+                  type: string
+                additional_request:
+                  type: string
+              required:
+                - idempotency_token
+                - payment_information
+                - slot
+                - user_information
+                - source
+                - additional_request
+            example:
+              idempotency_token: '15731994231250081786'
+              payment_information:
+                prepayment_status: PREPAYMENT_NOT_PROVIDED
+              slot:
+                confirmation_mode: CONFIRMATION_MODE_SYNCHRONOUS
+                duration_sec: '1800'
+                merchant_id: ${[merchant_id]}
+                resources:
+                  party_size: 2
+                  room_id: '1'
+                service_id: reservation
+                start_sec: '1761688800'
+              user_information:
+                email: null
+                family_name: null
+                given_name: Jonathan
+                telephone: '99939607'
+                user_id: null
+              source: google
+              additional_request: '-SPECIAL REQUESTS: I will be bringing a small dog.'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+                properties: {}
+  /get-csrf-token:
+    post:
+      summary: get-csrf token
+      description: ''
+      tags:
+        - auth
+      parameters: []
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+                properties: {}
+  /api/chatbot/manager-message:
+    post:
+      summary: ''
+      description: ''
+      tags:
+        - chatbot
+      parameters: []
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                merchant_id:
+                  type: string
+                message:
+                  type: string
+              required:
+                - merchant_id
+                - message
+            example:
+              merchant_id: ${[ merchant_id ]}
+              message: hola
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+                properties: {}
+  /:
+    post:
+      summary: create Backups Prod
+      description: ''
+      tags:
+        - aws
+      parameters: []
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+                properties: {}
+  /api/v1/reservas/modificar_mesas_reserva:
+    patch:
+      summary: Modificar mesas reserva
+      description: ''
+      tags:
+        - agora
+      parameters: []
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                reserva_id:
+                  type: integer
+                a_ids_mesas:
+                  type: array
+                  items:
+                    type: integer
+              required:
+                - reserva_id
+                - a_ids_mesas
+            example:
+              reserva_id: 2043472
+              a_ids_mesas:
+                - 235
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+                properties: {}
+  /api/freshworks/webhook:
+    post:
+      summary: Webhook
+      description: ''
+      tags:
+        - freshworks
+      parameters: []
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                sales_account_id:
+                  type: integer
+                sales_account_owner_name:
+                  type: string
+                sales_account_owner_email:
+                  type: string
+                sales_account_owner_id:
+                  type: integer
+                sales_account_parent_sales_account_id:
+                  type: object
+                sales_account_cf_tableo_uid:
+                  type: string
+                sales_account_cf_connected_to_tableo:
+                  type: string
+              required:
+                - sales_account_id
+                - sales_account_owner_name
+                - sales_account_owner_email
+                - sales_account_owner_id
+                - sales_account_cf_tableo_uid
+                - sales_account_cf_connected_to_tableo
+            example:
+              sales_account_id: 202006234107
+              sales_account_owner_name: Galina Dejdej
+              sales_account_owner_email: galina@tableo.com
+              sales_account_owner_id: 202000020014
+              sales_account_parent_sales_account_id: null
+              sales_account_cf_tableo_uid: https://devrms.tableo.com-472
+              sales_account_cf_connected_to_tableo: 'YES'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+                properties: {}
+  /api/chatbot/booking/:booking_id:
+    get:
+      summary: ''
+      description: |
+        Retrieves booking details by reference using the AI chatbot API.
+
+        Provides booking information for customer inquiries via chat interface.
+      tags:
+        - chatbot
+      parameters:
+        - name: ':booking_id'
+          in: query
+          description: ''
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+                properties: {}
+  /api/v1/reservas_en_mesa:
+    get:
+      summary: Reservas en mesa
+      description: ''
+      tags:
+        - agora
+      parameters: []
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+                properties: {}
+  /api/google-server/v3/services:
+    get:
+      summary: services
+      description: This method returns all services.
+      tags:
+        - google server
+      parameters: []
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+                properties: {}
+  /api/google-server/v3/HealthCheck:
+    get:
+      summary: HealthCheck
+      description: |
+        This method returns your Booking Server health status. It enables Google to continuously monitor the serving state of your Booking server.
+      tags:
+        - google server
+      parameters: []
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+                properties: {}
+  /api/v1/reservas/crear_reserva_de_paso:
+    post:
+      summary: Crear reserva de paso
+      description: ''
+      tags:
+        - agora
+      parameters: []
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                nombre:
+                  type: string
+                num_pax:
+                  type: integer
+                a_ids_mesas:
+                  type: array
+                  items:
+                    type: integer
+                b_comprobar_mesas:
+                  type: boolean
+                b_comprobar_mesas_ocupadas:
+                  type: boolean
+              required:
+                - nombre
+                - num_pax
+                - a_ids_mesas
+                - b_comprobar_mesas
+                - b_comprobar_mesas_ocupadas
+            example:
+              nombre: De Paso
+              num_pax: 2
+              a_ids_mesas:
+                - 67226
+              b_comprobar_mesas: true
+              b_comprobar_mesas_ocupadas: false
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+                properties: {}
+  /api/chatbot/restaurant/:slug/status:
+    get:
+      summary: ''
+      description: ''
+      tags:
+        - chatbot
+      parameters:
+        - name: ':slug'
+          in: query
+          description: ''
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+                properties: {}
+  /api/google-server/v3/UpdateBooking:
+    post:
+      summary: UpdateBooking
+      description: |
+        # UpdateBooking method
+
+        The client uses UpdateBooking to modify an existing booking.
+
+        If updating a booking fails due to any business logic error, the error should be populated in the `UpdateBookingResponse.booking_failure` field and returned with HTTP status 200.
+
+
+        A request message contains updated information in the booking field. The request will contain a `booking_id` to identify the booking to update. It will also include:
+
+        1. Slot details to update (booking modifications)
+            
+
+        Fields which do not require change will not be provided in the request.
+      tags:
+        - google server
+      parameters: []
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                booking:
+                  type: object
+                  properties:
+                    booking_id:
+                      type: string
+                    slot:
+                      type: object
+                      properties:
+                        duration_sec:
+                          type: integer
+                        resources:
+                          type: object
+                          properties:
+                            party_size:
+                              type: integer
+                          required:
+                            - party_size
+                        start_sec:
+                          type: integer
+                      required:
+                        - duration_sec
+                        - resources
+                        - start_sec
+                  required:
+                    - booking_id
+                    - slot
+              required:
+                - booking
+            example:
+              booking:
+                booking_id: ${[booking_id]}
+                slot:
+                  duration_sec: '7200'
+                  resources:
+                    party_size: 3
+                  start_sec: '1671645600'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+                properties: {}
+  /api/google-server/v3/merchants:
+    get:
+      summary: merchants
+      description: |
+        This method returns all merchants.
+      tags:
+        - google server
+      parameters: []
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+                properties: {}
+  /api/v1/turnos:
+    get:
+      summary: Turnos
+      description: ''
+      tags:
+        - agora
+      parameters: []
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+                properties: {}
+tags: []
+components:
+  schemas: {}
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT

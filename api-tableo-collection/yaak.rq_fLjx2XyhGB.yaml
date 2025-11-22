@@ -1,0 +1,38 @@
+type: http_request
+model: http_request
+id: rq_fLjx2XyhGB
+createdAt: 2025-11-19T21:54:07.638063
+updatedAt: 2025-11-22T20:40:39.623813
+workspaceId: wk_vGxjUtTZ2p
+folderId: fl_e7nE5thbRE
+authentication: {}
+authenticationType: null
+body: {}
+bodyType: null
+description: ''
+headers: []
+method: GET
+name: widget from google
+sortPriority: 0.0
+url: ${[url]}/widget/:slug/google-payment-redirect
+urlParameters:
+- enabled: true
+  name: :slug
+  value: ${[ restaurant_slug ]}
+  id: rSnSTexQUJ
+- enabled: true
+  name: date
+  value: ${[nextFridayUnixTime]}
+  id: 5ffT94bJQu
+- enabled: true
+  name: no_of_adults
+  value: '2'
+  id: q3KaDjKjyr
+- enabled: true
+  name: dining
+  value: Indoor
+  id: PpefS7vJeQ
+- enabled: true
+  name: ''
+  value: ''
+  id: V4cRQaYzxJ

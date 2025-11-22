@@ -1,0 +1,13 @@
+type: folder
+model: folder
+id: fl_4AEkvhigdF
+createdAt: 2025-11-19T21:54:07.639142
+updatedAt: 2025-11-22T16:57:19.378375
+workspaceId: wk_vGxjUtTZ2p
+folderId: null
+authentication: {}
+authenticationType: null
+description: ''
+headers: []
+name: agora
+sortPriority: 1000.0

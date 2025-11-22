@@ -1,0 +1,42 @@
+type: environment
+model: environment
+id: ev_zB2pLuNWZa
+workspaceId: wk_vGxjUtTZ2p
+createdAt: 2025-11-22T14:38:06.394592
+updatedAt: 2025-11-22T18:45:33.770749
+name: production
+public: true
+base: false
+parentModel: environment
+parentId: null
+variables:
+- enabled: true
+  name: url
+  value: https://app.tableo.com
+  id: mV7SmnCEUG
+- enabled: true
+  name: user
+  value: mauroziux@gmail.com
+  id: 8pR9hgfBs0
+- enabled: true
+  name: password
+  value: ${[ secure(value=b64'WUVOQ19lVUUwYXpOdVF3RTFKbUZCbzV3Q2ZmSDU4NGFoQlNVVmszR2VzdGxUL2tqU05CR2xlSFplNEVGZFNaSnh6S2F5TU5aMC8wc2pYcWg1L3dCVGoxNERiMk1F') ]}
+  id: dv5exhFkBY
+- enabled: true
+  name: merchant_id
+  value: ChIJ6ZAo_f2V3UYRH92C07OEZJA
+  id: UHqHhcx76j
+- enabled: true
+  name: booking_id
+  value: ''
+  id: g0HH4GMIdY
+- enabled: true
+  name: restaurant_slug
+  value: restaurant-prod
+  id: x8RjUKM4Zt
+- enabled: true
+  name: agoratoken
+  value: ''
+  id: uI4PQUnIuW
+color: var(--danger)
+sortPriority: 0.0

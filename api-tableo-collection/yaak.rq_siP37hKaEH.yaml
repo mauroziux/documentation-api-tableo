@@ -1,0 +1,29 @@
+type: http_request
+model: http_request
+id: rq_siP37hKaEH
+createdAt: 2025-11-19T21:54:07.635371
+updatedAt: 2025-11-22T18:16:58.270557
+workspaceId: wk_vGxjUtTZ2p
+folderId: fl_qtdcK4gLhB
+authentication: {}
+authenticationType: null
+body:
+  text: |-
+    {
+        "booking": {
+            "booking_id": "${[booking_id]}",
+            "status":"CANCELED"
+        }
+    }
+bodyType: application/json
+description: "The client uses UpdateBooking cancel an existing booking.\n\nIf updating a booking fails due to any business logic error, the error should be populated in the `UpdateBookingResponse.booking_failure` field and returned with HTTP status 200.\n\n\n\nA request message contains updated information in the booking field. The request will contain a `booking_id` to identify the booking to update. It will also include:\n\n1. Status to change (booking cancellation)\n    \n\nFields which do not require change will not be provided in the request.\n"
+headers:
+- enabled: true
+  name: Content-Type
+  value: application/json
+  id: null
+method: POST
+name: UpdateBooking Cancelation
+sortPriority: 5.0
+url: ${[url]}/api/google-server/v3/UpdateBooking
+urlParameters: []

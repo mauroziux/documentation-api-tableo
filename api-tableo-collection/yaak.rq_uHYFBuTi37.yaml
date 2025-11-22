@@ -1,0 +1,23 @@
+type: http_request
+model: http_request
+id: rq_uHYFBuTi37
+createdAt: 2025-11-19T21:54:07.635259
+updatedAt: 2025-11-22T18:17:20.946995
+workspaceId: wk_vGxjUtTZ2p
+folderId: fl_qtdcK4gLhB
+authentication: {}
+authenticationType: null
+body:
+  text: ''
+bodyType: application/json
+description: This method returns all services.
+headers:
+- enabled: true
+  name: Content-Type
+  value: application/json
+  id: null
+method: GET
+name: services
+sortPriority: 4.0
+url: ${[url]}/api/google-server/v3/services
+urlParameters: []

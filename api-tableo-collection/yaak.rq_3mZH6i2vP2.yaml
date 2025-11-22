@@ -1,0 +1,54 @@
+type: http_request
+model: http_request
+id: rq_3mZH6i2vP2
+createdAt: 2025-11-19T21:54:07.638128
+updatedAt: 2025-11-22T20:40:08.888915
+workspaceId: wk_vGxjUtTZ2p
+folderId: fl_e7nE5thbRE
+authentication: {}
+authenticationType: null
+body: {}
+bodyType: null
+description: |
+  Retrieves available service times for restaurant bookings via the public widget interface.
+
+  Allows front-end widgets to query available dining times based on date, party size, and restaurant.
+
+  **Parameters:**
+  - `:slug` (path): Restaurant identifier (string)
+  - `day` (query): Desired date for service (date format)
+  - `booking_date` (query): Confirmation date (date format)
+  - `no_of_adults` (query): Number of adult guests (integer)
+  - `no_of_children` (query): Number of children (integer)
+
+  Returns an array of available time slots for the specified restaurant and date.
+headers: []
+method: GET
+name: widget service times
+sortPriority: 333.3333333333333
+url: ${[url]}/widget/:slug/service-times
+urlParameters:
+- enabled: true
+  name: :slug
+  value: ${[ restaurant_slug ]}
+  id: dg0zEFbFKS
+- enabled: true
+  name: day
+  value: 2024-07-01
+  id: gh2pR6k6Hw
+- enabled: true
+  name: booking_date
+  value: 2024-07-01
+  id: NKjK3KfJSQ
+- enabled: true
+  name: no_of_adults
+  value: '2'
+  id: bndi2D9dim
+- enabled: true
+  name: no_of_children
+  value: '0'
+  id: yhhcfmkVDN
+- enabled: true
+  name: ''
+  value: ''
+  id: fuaxZcdn5s

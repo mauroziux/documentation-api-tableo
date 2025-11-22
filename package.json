@@ -4,10 +4,9 @@
   "description": "API documentation for Tableo built with Swagger UI",
   "main": "index.html",
   "scripts": {
-    "build": "bun p2o src/postman_collection.json -f docs/openapi.yaml -o src/options.json",
-    "serve": "wrangler pages dev docs",
-    "test": "node test-setup.js",
-    "deploy": "gh-pages -d docs"
+    "build": "bun scripts/yaakToOpenapi.ts",
+    "serve": "wrangler pages dev docs/v1",
+    "test": "node scripts/test-setup.js"
   },
   "repository": {
     "type": "git",
@@ -27,7 +26,8 @@
   },
   "homepage": "https://yourusername.github.io/documentation-api-tableo/",
   "devDependencies": {
-    "postman-to-openapi": "^3.0.1",
+    "@types/js-yaml": "^4.0.9",
+    "js-yaml": "^4.1.1",
     "wrangler": "^4.25.0"
   }
 }

@@ -1,0 +1,23 @@
+type: http_request
+model: http_request
+id: rq_AVhennESbg
+createdAt: 2025-11-19T21:54:07.637376
+updatedAt: 2025-11-19T21:54:07.637376
+workspaceId: wk_vGxjUtTZ2p
+folderId: fl_4AEkvhigdF
+authentication: {}
+authenticationType: null
+body:
+  text: '{"reserva_id":2043472,"a_ids_mesas":[235]}'
+bodyType: application/json
+description: ''
+headers:
+- enabled: true
+  name: Content-Type
+  value: application/json
+  id: null
+method: PATCH
+name: Modificar mesas reserva
+sortPriority: 29.0
+url: ${[url]}/api/v1/reservas/modificar_mesas_reserva
+urlParameters: []

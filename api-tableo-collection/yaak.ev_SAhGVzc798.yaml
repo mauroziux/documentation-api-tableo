@@ -1,0 +1,46 @@
+type: environment
+model: environment
+id: ev_SAhGVzc798
+workspaceId: wk_vGxjUtTZ2p
+createdAt: 2025-11-22T14:37:52.266463
+updatedAt: 2025-11-22T21:25:35.685540
+name: local
+public: true
+base: false
+parentModel: environment
+parentId: null
+variables:
+- enabled: true
+  name: url
+  value: https://tableo.test
+  id: T6CsNDaHAM
+- enabled: true
+  name: user
+  value: chatgpt@tableo.com
+  id: ZSVCIu8PDM
+- enabled: true
+  name: password
+  value: ${[ secure(value=b64'WUVOQ19lVUUwYXpOdVF3RU5yVHg2MmlNblp6NVdVNTNwcWVXVVNxKzhQV1orL1V5ditKWHAvbHdkOFkvOU5PelZ1RkxDNWV3S2tOZDZTOU4zeW56Q0ZmMHdGa2JV') ]}
+  id: TPyVJK6rHV
+- enabled: true
+  name: merchant_id
+  value: ChIJrXobRBRRDhMRVDIWhzzmi38
+  id: PmT0rxRkIN
+- enabled: true
+  name: booking_id
+  value: ''
+  id: rghSPmFxsh
+- enabled: true
+  name: restaurant_slug
+  value: restaurant-local
+  id: sqPSQVfFgD
+- enabled: true
+  name: agoratoken
+  value: ''
+  id: TUyWa2XUeJ
+- enabled: true
+  name: nextFridayUnixTime
+  value: ${[ dateAdd(format='X') ]}
+  id: 9vbj9jfukZ
+color: var(--success)
+sortPriority: 0.0

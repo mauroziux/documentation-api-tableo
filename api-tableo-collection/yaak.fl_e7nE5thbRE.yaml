@@ -1,0 +1,13 @@
+type: folder
+model: folder
+id: fl_e7nE5thbRE
+createdAt: 2025-11-22T16:56:59.995152
+updatedAt: 2025-11-22T16:57:19.381645
+workspaceId: wk_vGxjUtTZ2p
+folderId: null
+authentication: {}
+authenticationType: null
+description: ''
+headers: []
+name: widget
+sortPriority: 7000.0

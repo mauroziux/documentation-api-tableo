@@ -1,0 +1,26 @@
+type: http_request
+model: http_request
+id: rq_NzubfWwtcT
+createdAt: 2025-11-19T21:54:07.637875
+updatedAt: 2025-11-22T19:49:17.943992
+workspaceId: wk_vGxjUtTZ2p
+folderId: fl_e7nE5thbRE
+authentication: {}
+authenticationType: null
+body: {}
+bodyType: null
+description: ''
+headers: []
+method: GET
+name: widget
+sortPriority: 1000.0
+url: ${[url]}/widget/:slug
+urlParameters:
+- enabled: true
+  name: :slug
+  value: ${[ restaurant_slug ]}
+  id: z3zkp7Qp5B
+- enabled: true
+  name: ''
+  value: ''
+  id: bUIncm2SW8

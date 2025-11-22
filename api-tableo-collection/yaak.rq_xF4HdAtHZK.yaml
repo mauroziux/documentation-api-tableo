@@ -1,0 +1,32 @@
+type: http_request
+model: http_request
+id: rq_xF4HdAtHZK
+createdAt: 2025-11-19T21:54:07.637717
+updatedAt: 2025-11-19T21:54:07.637717
+workspaceId: wk_vGxjUtTZ2p
+folderId: fl_4AEkvhigdF
+authentication: {}
+authenticationType: null
+body:
+  text: |-
+    {
+        "nombre": "De Paso",
+        "num_pax": 2,
+        "a_ids_mesas": [
+            67226
+        ],
+        "b_comprobar_mesas": true,
+        "b_comprobar_mesas_ocupadas": false
+    }
+bodyType: application/json
+description: ''
+headers:
+- enabled: true
+  name: Content-Type
+  value: application/json
+  id: null
+method: POST
+name: Crear reserva de paso
+sortPriority: 32.0
+url: ${[url]}/api/v1/reservas/crear_reserva_de_paso
+urlParameters: []

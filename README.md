@@ -4,14 +4,15 @@ This project contains the API documentation for Tableo, built with Swagger UI an
 
 ## Overview
 
-The documentation is automatically generated from a Postman collection and converted to OpenAPI 3.0 specification format. The site displays interactive API documentation using Swagger UI.
+The documentation is automatically generated from a **Yaak** collection (synced folder) and converted to OpenAPI 3.0 specification format. The site displays interactive API documentation using Swagger UI.
 
 ## Project Structure
 
 ```
 documentation-api-tableo/
+├── api-tableo-collection/        # Yaak collection data (YAML files)
 ├── src/                          # Source files
-│   ├── postman_collection.json   # Source Postman collection
+│   ├── yaakToOpenapi.ts          # Script to convert Yaak to OpenAPI
 │   └── README.md                 # Documentation for source files
 ├── docs/                         # Generated documentation (served by GitHub Pages)
 │   ├── index.html                # Main HTML file that loads Swagger UI
@@ -26,7 +27,8 @@ documentation-api-tableo/
 
 ### Key Directories
 
-- **`src/`** - Contains source files (Postman collection, templates)
+- **`api-tableo-collection/`** - Contains the Yaak workspace data (synced folder).
+- **`src/`** - Contains scripts and utilities.
 - **`docs/`** - Contains generated documentation files (served by GitHub Pages)
 - **`.github/workflows/`** - Contains GitHub Actions for automated deployment
 
@@ -34,8 +36,8 @@ documentation-api-tableo/
 
 ### Available Commands
 
-- **`bun run build`** - Build the documentation (convert Postman collection to OpenAPI format)
-- **`bun run serve`** - Serve documentation locally on port 800
+- **`bun run build`** - Build the documentation (convert Yaak collection to OpenAPI format)
+- **`bun run serve`** - Serve documentation locally (via wrangler)
 - **`bun run test`** - Test the documentation setup
 - **`bun run deploy`** - Deploy to GitHub Pages (manual deployment)
 
@@ -57,14 +59,13 @@ bun run build
 bun run serve
 
 # Or manually with other tools
-bun --port 8000 docs
 python -m http.server 8000 -d docs
 npx http-server docs -p 8000
 ```
 
 ⚠️ **Important**: Always use a web server! Don't open `docs/index.html` directly in your browser as this will cause CORS errors.
 
-The documentation will be available at `http://localhost:800` (or `http://localhost:8000` if using other methods)
+The documentation will be available at `http://localhost:8788` (if using Wrangler) or `http://localhost:8000`.
 
 ## GitHub Pages Deployment
 
@@ -121,7 +122,7 @@ git push origin main
 
 To update the API documentation:
 
-1. Update the `src/postman_collection.json` file with your latest Postman collection
+1. Sync your changes in Yaak to the `api-tableo-collection` folder.
 2. Build the documentation:
 ```bash
 bun run build
@@ -130,9 +131,9 @@ bun run build
 
 ### Working with Source Files
 
-- **Postman Collection**: Edit `src/postman_collection.json`
-- **Documentation**: Generated files go to `docs/`
-- **Serving**: The `docs/` folder is served by GitHub Pages
+- **Yaak Collection**: The source of truth is in `api-tableo-collection/`.
+- **Documentation**: Generated files go to `docs/`.
+- **Serving**: The `docs/` folder is served by GitHub Pages.
 
 ## Environment URLs
 

@@ -1,0 +1,24 @@
+type: http_request
+model: http_request
+id: rq_SKH5afyCsC
+createdAt: 2025-11-19T21:54:07.635046
+updatedAt: 2025-11-22T18:19:40.601962
+workspaceId: wk_vGxjUtTZ2p
+folderId: fl_qtdcK4gLhB
+authentication: {}
+authenticationType: null
+body:
+  text: ''
+bodyType: application/json
+description: |
+  This method returns your Booking Server health status. It enables Google to continuously monitor the serving state of your Booking server.
+headers:
+- enabled: true
+  name: Content-Type
+  value: application/json
+  id: null
+method: GET
+name: HealthCheck
+sortPriority: 2.0
+url: ${[url]}/api/google-server/v3/HealthCheck
+urlParameters: []

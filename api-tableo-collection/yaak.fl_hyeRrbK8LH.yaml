@@ -1,0 +1,13 @@
+type: folder
+model: folder
+id: fl_hyeRrbK8LH
+createdAt: 2025-11-19T21:54:07.639055
+updatedAt: 2025-11-22T16:57:19.380605
+workspaceId: wk_vGxjUtTZ2p
+folderId: null
+authentication: {}
+authenticationType: null
+description: ''
+headers: []
+name: stripe
+sortPriority: 5000.0

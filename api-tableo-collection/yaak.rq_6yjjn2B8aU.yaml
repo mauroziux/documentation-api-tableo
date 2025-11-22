@@ -1,0 +1,38 @@
+type: http_request
+model: http_request
+id: rq_6yjjn2B8aU
+createdAt: 2025-11-19T21:54:07.636101
+updatedAt: 2025-11-22T18:12:45.602024
+workspaceId: wk_vGxjUtTZ2p
+folderId: fl_GP6254G5Qu
+authentication: {}
+authenticationType: null
+body:
+  text: |-
+    {
+        "merchant_id":"${[ merchant_id ]}",
+        "message":"hola"
+    }
+bodyType: application/json
+description: |
+  Retrieves booking details by reference using the AI chatbot API.
+
+  Provides booking information for customer inquiries via chat interface.
+headers:
+- enabled: true
+  name: Content-Type
+  value: application/json
+  id: null
+method: GET
+name: ''
+sortPriority: 14.0
+url: ${[url]}/api/chatbot/booking/:booking_id
+urlParameters:
+- enabled: true
+  name: :booking_id
+  value: ${[ booking_id ]}
+  id: sKWvkxP6TI
+- enabled: true
+  name: ''
+  value: ''
+  id: 2wTGAIGzct

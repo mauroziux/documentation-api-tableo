@@ -1,0 +1,21 @@
+type: http_request
+model: http_request
+id: rq_JVhWv9MZCW
+createdAt: 2025-11-19T21:54:07.637811
+updatedAt: 2025-11-19T21:54:07.637811
+workspaceId: wk_vGxjUtTZ2p
+folderId: fl_4AEkvhigdF
+authentication: {}
+authenticationType: null
+body: {}
+bodyType: null
+description: |
+  Retrieves a list of tables available in the restaurant for the Agora POS system.
+
+  This endpoint provides table information used for managing reservations and seating in the point-of-sale interface.
+headers: []
+method: GET
+name: Mesas
+sortPriority: 33.0
+url: ${[url]}/api/v1/mesas
+urlParameters: []

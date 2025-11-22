@@ -1,0 +1,258 @@
+type: http_request
+model: http_request
+id: rq_7i6D6hzFM3
+createdAt: 2025-11-19T21:54:07.636378
+updatedAt: 2025-11-22T21:52:26.215756
+workspaceId: wk_vGxjUtTZ2p
+folderId: fl_hyeRrbK8LH
+authentication: {}
+authenticationType: null
+body:
+  text: |-
+    {
+      "id": "evt_3SAxRtRJixx9kysc0O7yAuI2",
+      "object": "event",
+      "account": "acct_1QicWFRJixx9kysc",
+      "api_version": "2020-08-27",
+      "context": "acct_1QicWFRJixx9kysc",
+      "created": 1758738645,
+      "data": {
+        "object": {
+          "id": "pi_3SAxRtRJixx9kysc0YKn1BD3",
+          "object": "payment_intent",
+          "amount": 15000,
+          "amount_capturable": 0,
+          "amount_details": {
+            "tip": {}
+          },
+          "amount_received": 15000,
+          "application": "ca_LU2ufYDftf2pONh1oWK0FgWoydRvD9qI",
+          "application_fee_amount": 177,
+          "automatic_payment_methods": null,
+          "canceled_at": null,
+          "cancellation_reason": null,
+          "capture_method": "automatic",
+          "client_secret": "pi_3SAxRtRJixx9kysc0YKn1BD3_secret_m8A3IqlhllcMEqOObH8g1xjhL",
+          "confirmation_method": "automatic",
+          "created": 1758738593,
+          "currency": "eur",
+          "customer": "cus_T7Bq0ho2ewBZPm",
+          "description": "Tableo Booking Reference: WY4-P07",
+          "excluded_payment_method_types": null,
+          "invoice": null,
+          "last_payment_error": null,
+          "latest_charge": "ch_3SAxRtRJixx9kysc0CUOpzUj",
+          "livemode": true,
+          "metadata": {
+            "application_fee_amount": "177",
+            "product": "tableo_products",
+            "reference": "WY4-P07"
+          },
+          "next_action": null,
+          "on_behalf_of": null,
+          "payment_method": "pm_1SAxSgRJixx9kyscE0smHHnr",
+          "payment_method_configuration_details": null,
+          "payment_method_options": {
+            "card": {
+              "installments": null,
+              "mandate_options": null,
+              "network": null,
+              "request_three_d_secure": "automatic"
+            }
+          },
+          "payment_method_types": [
+            "card"
+          ],
+          "processing": null,
+          "receipt_email": null,
+          "review": null,
+          "setup_future_usage": null,
+          "shipping": null,
+          "source": null,
+          "statement_descriptor": null,
+          "statement_descriptor_suffix": null,
+          "status": "succeeded",
+          "transfer_data": null,
+          "transfer_group": null,
+          "charges": {
+            "object": "list",
+            "data": [
+              {
+                "id": "ch_3SAxRtRJixx9kysc0CUOpzUj",
+                "object": "charge",
+                "amount": 15000,
+                "amount_captured": 15000,
+                "amount_refunded": 0,
+                "application": "ca_LU2ufYDftf2pONh1oWK0FgWoydRvD9qI",
+                "application_fee": "fee_1SAxSjRJixx9kysct7TaLQTI",
+                "application_fee_amount": 177,
+                "balance_transaction": "txn_3SAxRtRJixx9kysc0aPQ0Wo3",
+                "billing_details": {
+                  "address": {
+                    "city": "Swieqi",
+                    "country": "MT",
+                    "line1": "74, Pearl Residence, Apt 4 ",
+                    "line2": "Fuq Il-Gonna ",
+                    "postal_code": "SWQ 3245",
+                    "state": ""
+                  },
+                  "email": "glenn.d.borg@gmail.com",
+                  "name": "Glenn Borg",
+                  "phone": null,
+                  "tax_id": null
+                },
+                "calculated_statement_descriptor": "BASTIONS VIEW LTD",
+                "captured": true,
+                "created": 1758738644,
+                "currency": "eur",
+                "customer": "cus_T7Bq0ho2ewBZPm",
+                "description": "Tableo Booking Reference: WY4-P07",
+                "destination": null,
+                "dispute": null,
+                "disputed": false,
+                "failure_balance_transaction": null,
+                "failure_code": null,
+                "failure_message": null,
+                "fraud_details": {},
+                "invoice": null,
+                "livemode": true,
+                "metadata": {
+                  "application_fee_amount": "177",
+                  "product": "tableo_products",
+                  "reference": "WY4-P07"
+                },
+                "on_behalf_of": null,
+                "order": null,
+                "outcome": {
+                  "advice_code": null,
+                  "network_advice_code": null,
+                  "network_decline_code": null,
+                  "network_status": "approved_by_network",
+                  "reason": null,
+                  "risk_level": "normal",
+                  "seller_message": "Payment complete.",
+                  "type": "authorized"
+                },
+                "paid": true,
+                "payment_intent": "pi_3SAxRtRJixx9kysc0YKn1BD3",
+                "payment_method": "pm_1SAxSgRJixx9kyscE0smHHnr",
+                "payment_method_details": {
+                  "card": {
+                    "amount_authorized": 15000,
+                    "authorization_code": "LCRISX",
+                    "brand": "mastercard",
+                    "checks": {
+                      "address_line1_check": "fail",
+                      "address_postal_code_check": "fail",
+                      "cvc_check": null
+                    },
+                    "country": "MT",
+                    "exp_month": 4,
+                    "exp_year": 2028,
+                    "extended_authorization": {
+                      "status": "disabled"
+                    },
+                    "fingerprint": "eHgRDmdMNxZQZZ6Z",
+                    "funding": "debit",
+                    "incremental_authorization": {
+                      "status": "unavailable"
+                    },
+                    "installments": null,
+                    "last4": "0620",
+                    "mandate": null,
+                    "multicapture": {
+                      "status": "unavailable"
+                    },
+                    "network": "mastercard",
+                    "network_token": {
+                      "used": false
+                    },
+                    "network_transaction_id": "MDHM0J8HW0924",
+                    "overcapture": {
+                      "maximum_amount_capturable": 15000,
+                      "status": "unavailable"
+                    },
+                    "regulated_status": "unregulated",
+                    "three_d_secure": null,
+                    "wallet": {
+                      "apple_pay": {
+                        "type": "apple_pay"
+                      },
+                      "dynamic_last4": "3279",
+                      "type": "apple_pay"
+                    }
+                  },
+                  "type": "card"
+                },
+                "radar_options": {},
+                "receipt_email": null,
+                "receipt_number": null,
+                "receipt_url": "https://pay.stripe.com/receipts/payment/CAcQARoXChVhY2N0XzFRaWNXRlJKaXh4OWt5c2Mo1fHQxgYyBu8AWhH01josFszPrssgkVAIPAmV3Xu4VGWUEXlvIGFcLnkBl6PbWHKSIV53AubQEapzk7Q",
+                "refunded": false,
+                "refunds": {
+                  "object": "list",
+                  "data": [],
+                  "has_more": false,
+                  "total_count": 0,
+                  "url": "/v1/charges/ch_3SAxRtRJixx9kysc0CUOpzUj/refunds"
+                },
+                "review": null,
+                "shipping": null,
+                "source": null,
+                "source_transfer": null,
+                "statement_descriptor": null,
+                "statement_descriptor_suffix": null,
+                "status": "succeeded",
+                "transfer_data": null,
+                "transfer_group": null
+              }
+            ],
+            "has_more": false,
+            "total_count": 1,
+            "url": "/v1/charges?payment_intent=pi_3SAxRtRJixx9kysc0YKn1BD3"
+          }
+        }
+      },
+      "livemode": true,
+      "pending_webhooks": 1,
+      "request": {
+        "id": null,
+        "idempotency_key": "83a48a04-ed6f-4768-8a31-43950a3704ee"
+      },
+      "type": "payment_intent.succeeded"
+    }
+bodyType: application/json
+description: |
+  Retrieves the list of shifts for the restaurant in the Agora POS system.
+
+  Provides shift information for scheduling and management in the point-of-sale interface.
+headers:
+- enabled: true
+  name: Content-Type
+  value: application/json
+  id: GsbDj5gc5x
+- enabled: false
+  name: Stripe-Signature
+  value: signature
+  id: ZyE9MBYvrG
+- enabled: true
+  name: ''
+  value: ''
+  id: rkYYfHh8mz
+method: POST
+name: webhook
+sortPriority: 19.0
+url: ${[url]}/stripe/webhook
+urlParameters:
+- enabled: true
+  name: account
+  value: ''
+  id: kum88Z3Nat
+- enabled: true
+  name: der
+  value: ''
+  id: 5Mn7eeSNxE
+- enabled: true
+  name: ''
+  value: ''
+  id: AyzRuuNz5z

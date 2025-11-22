@@ -1,0 +1,52 @@
+type: http_request
+model: http_request
+id: rq_U9LRsasdr8
+createdAt: 2025-11-19T21:54:07.635833
+updatedAt: 2025-11-22T18:47:54.501666
+workspaceId: wk_vGxjUtTZ2p
+folderId: fl_qtdcK4gLhB
+authentication: {}
+authenticationType: null
+body:
+  text: "{\n    \"merchant_id\": \"${[merchant_id]}\",\n    \"slot_time\": [\n        {\n            \"duration_sec\": \"5400\",\n            \"resource_ids\": {\n                \n              \"party_size\": 5\n            },\n            \"service_id\": \"reservation\",\n            \"start_sec\": \"${[nextFridayUnixTime]}\"\n        }\n       \n    ]\n}"
+bodyType: application/json
+description: |
+  Redirects users after completing payment via Google in the booking widget.
+
+  Processes payment confirmation and redirects to the appropriate booking confirmation page.
+
+  **Parameters:**
+  - `:slug` (path): Restaurant identifier
+  - `date` (query): Booking date
+  - `no_of_adults` (query): Number of adults
+  - `dining` (query): Dining option (e.g., Indoor)
+headers:
+- enabled: true
+  name: Content-Type
+  value: application/json
+  id: null
+method: GET
+name: google-payment-redirect
+sortPriority: 11.0
+url: ${[url]}/widget/:slug/google-payment-redirect
+urlParameters:
+- enabled: true
+  name: :slug
+  value: ${[ restaurant_slug ]}
+  id: EJNInEYMyf
+- enabled: true
+  name: date
+  value: ${[nextFridayUnixTime]}
+  id: rTJZuFA9MT
+- enabled: true
+  name: no_of_adults
+  value: '2'
+  id: jgh0yKJIhu
+- enabled: true
+  name: dining
+  value: Indoor
+  id: EndsDJVvgM
+- enabled: true
+  name: ''
+  value: ''
+  id: XTESkm6Njz

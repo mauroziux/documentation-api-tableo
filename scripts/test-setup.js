@@ -8,7 +8,7 @@ console.log('🔍 Testing Tableo API Documentation Setup...\n');
 // Test 1: Check if required files exist
 console.log('1. Checking required files...');
 const requiredFiles = [
-  'src/postman_collection.json',
+  'src/yaakToOpenapi.ts',
   'docs/index.html',
   'docs/openapi.yaml',
   'package.json'
@@ -34,11 +34,11 @@ console.log('\n2. Checking OpenAPI file format...');
 try {
   const openapiContent = fs.readFileSync('docs/openapi.yaml', 'utf8');
 
-  if (openapiContent.startsWith('openapi: 3.1.0')) {
+  if (openapiContent.startsWith('openapi: 3.0.0')) {
     console.log('   ✅ OpenAPI version field is correct');
   } else {
     console.log('   ❌ OpenAPI version field is missing or incorrect');
-    console.log('   Expected: openapi: 3.1.0');
+    console.log('   Expected: openapi: 3.0.0');
     console.log('   Found:', openapiContent.split('\n')[0]);
   }
 
@@ -83,7 +83,7 @@ console.log('\n4. Checking package.json scripts...');
 try {
   const packageJson = JSON.parse(fs.readFileSync('package.json', 'utf8'));
 
-  const requiredScripts = ['convert', 'build', 'deploy'];
+  const requiredScripts = ['build', 'serve', 'deploy'];
   requiredScripts.forEach(script => {
     if (packageJson.scripts && packageJson.scripts[script]) {
       console.log(`   ✅ "${script}" script is defined`);
@@ -96,25 +96,26 @@ try {
   console.log('   ❌ Error reading package.json:', error.message);
 }
 
-// Test 5: Check Postman collection structure
-console.log('\n5. Checking Postman collection structure...');
+// Test 5: Check Yaak collection structure
+console.log('\n5. Checking Yaak collection structure...');
 try {
-  const postmanCollection = JSON.parse(fs.readFileSync('src/postman_collection.json', 'utf8'));
+  const yaakDir = 'api-tableo-collection';
 
-  if (postmanCollection.info && postmanCollection.info.name) {
-    console.log('   ✅ Collection has info.name');
-  } else {
-    console.log('   ❌ Collection missing info.name');
-  }
+  if (fs.existsSync(yaakDir)) {
+    const files = fs.readdirSync(yaakDir);
+    const yamlFiles = files.filter(f => f.endsWith('.yaml') || f.endsWith('.yml'));
 
-  if (postmanCollection.item && Array.isArray(postmanCollection.item)) {
-    console.log(`   ✅ Collection has ${postmanCollection.item.length} items`);
+    if (yamlFiles.length > 0) {
+      console.log(`   ✅ Collection directory exists with ${yamlFiles.length} YAML files`);
+    } else {
+      console.log('   ⚠️ Collection directory exists but is empty of YAML files');
+    }
   } else {
-    console.log('   ❌ Collection missing items array');
+    console.log('   ❌ Collection directory missing');
   }
 
 } catch (error) {
-  console.log('   ❌ Error reading Postman collection:', error.message);
+  console.log('   ❌ Error reading Yaak collection:', error.message);
 }
 
 console.log('\n🎯 Setup Test Complete!');

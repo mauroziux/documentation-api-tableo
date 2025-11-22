@@ -1,0 +1,42 @@
+type: environment
+model: environment
+id: ev_6RJJwTam92
+workspaceId: wk_vGxjUtTZ2p
+createdAt: 2025-11-22T14:38:19.187430
+updatedAt: 2025-11-22T18:45:38.560618
+name: staging
+public: true
+base: false
+parentModel: environment
+parentId: null
+variables:
+- enabled: true
+  name: url
+  value: https://devrms.tableo.com
+  id: 8UnyuXGFTB
+- enabled: true
+  name: user
+  value: chatgpt@tableo.com
+  id: V39U97KWfY
+- enabled: true
+  name: password
+  value: ${[ secure(value=b64'WUVOQ19lVUUwYXpOdVF3RkV6ZHhwejRSLzJHdXRNYmlWRVBiQUZzVEphelYzLzV4SDR5dTBRWGpUd2xlQ0gzSUM3RDRoQUNUU0Z5NDFVVUNaME9wL2VuamV1WmN3') ]}
+  id: 2Y8DVBn4Q5
+- enabled: true
+  name: merchant_id
+  value: ChIJixuLkaBLDhMRN0naVikYRhM
+  id: xMsD0iUj8m
+- enabled: true
+  name: booking_id
+  value: ''
+  id: sdT2CZ9dnh
+- enabled: true
+  name: restaurant_slug
+  value: restaurant-devrms
+  id: KgJ3YMcY5X
+- enabled: true
+  name: agoratoken
+  value: ''
+  id: gdbiTZijPP
+color: var(--info)
+sortPriority: 0.0

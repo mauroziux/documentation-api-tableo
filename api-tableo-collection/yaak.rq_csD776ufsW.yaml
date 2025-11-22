@@ -1,0 +1,31 @@
+type: http_request
+model: http_request
+id: rq_csD776ufsW
+createdAt: 2025-11-19T21:54:07.636312
+updatedAt: 2025-11-22T18:12:33.290237
+workspaceId: wk_vGxjUtTZ2p
+folderId: fl_GP6254G5Qu
+authentication: {}
+authenticationType: null
+body:
+  text: ''
+bodyType: application/json
+description: ''
+headers:
+- enabled: true
+  name: Content-Type
+  value: application/json
+  id: null
+method: GET
+name: ''
+sortPriority: 17.0
+url: ${[url]}/api/chatbot/restaurant/:slug/status
+urlParameters:
+- enabled: true
+  name: :slug
+  value: ${[ restaurant_slug ]}
+  id: 4iubPDz9yt
+- enabled: true
+  name: ''
+  value: ''
+  id: dCknuChvtE

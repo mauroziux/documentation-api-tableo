@@ -1,0 +1,13 @@
+type: folder
+model: folder
+id: fl_TXbTs9cjKP
+createdAt: 2025-11-22T16:55:47.739861
+updatedAt: 2025-11-22T16:57:19.378988
+workspaceId: wk_vGxjUtTZ2p
+folderId: null
+authentication: {}
+authenticationType: null
+description: ''
+headers: []
+name: aws
+sortPriority: 2000.0

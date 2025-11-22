@@ -1,0 +1,13 @@
+type: folder
+model: folder
+id: fl_qtdcK4gLhB
+createdAt: 2025-11-19T21:54:07.638365
+updatedAt: 2025-11-22T16:57:19.379493
+workspaceId: wk_vGxjUtTZ2p
+folderId: null
+authentication: {}
+authenticationType: null
+description: ''
+headers: []
+name: google server
+sortPriority: 3000.0

@@ -1,0 +1,49 @@
+type: http_request
+model: http_request
+id: rq_3fwttKj5Rc
+createdAt: 2025-11-19T21:54:07.636930
+updatedAt: 2025-11-19T21:54:07.636930
+workspaceId: wk_vGxjUtTZ2p
+folderId: fl_xyUTbsEpPN
+authentication:
+  token: 7|bIRv5ZaJAVALcFbvLozojyFifqccrhnCQ6NW5Uc62748b630
+authenticationType: bearer
+body:
+  text: |-
+    {
+      "phone_call_id": 202001993005,
+      "phone_call_owner_name": "Dmitry Chizhikov",
+      "phone_call_call_status": "Completed",
+      "phone_call_created_at": "03-11-2025 18:05:55",
+      "phone_call_outcome_id": 202000866616,
+      "phone_call_entity_first_name": "Fernando",
+      "phone_call_entity_last_name": "Pinto",
+      "phone_call_entity_owner_name": "Dmitry Chizhikov",
+      "phone_call_entity_sales_account_cf_tableo_uid": "7907",
+      "phone_call_entity_country": "Portugal",
+      "phone_call_entity_cf_country_code": "PT",
+      "phone_call_entity_recent_note": null,
+      "phone_call_entity_sales_account_recent_note": null,
+      "phone_call_entity_id": 202044790728,
+      "phone_call_entity_sales_account_id": 202006332535,
+      "phone_call_entity_sales_account_name": "O Pescador",
+      "phone_call_call_direction": "Outgoing",
+      "phone_call_is_manual": "Yes",
+      "phone_call_entity_sales_account_cf_google_restaurant_name": "O Pescador"
+    }
+bodyType: application/json
+description: ''
+headers:
+- enabled: true
+  name: Content-Type
+  value: application/json
+  id: null
+method: POST
+name: Webhook Slack Contact
+sortPriority: 22.0
+url: ${[url]}/api/freshworks/webhook/slack
+urlParameters:
+- enabled: true
+  name: type
+  value: Contact
+  id: null

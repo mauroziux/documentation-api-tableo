@@ -1,0 +1,13 @@
+type: folder
+model: folder
+id: fl_xyUTbsEpPN
+createdAt: 2025-11-19T21:54:07.639098
+updatedAt: 2025-11-22T16:57:19.381126
+workspaceId: wk_vGxjUtTZ2p
+folderId: null
+authentication: {}
+authenticationType: null
+description: ''
+headers: []
+name: freshworks
+sortPriority: 6000.0

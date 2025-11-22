@@ -1,0 +1,19 @@
+type: http_request
+model: http_request
+id: rq_rkNvC29LfL
+createdAt: 2025-11-19T21:54:07.637251
+updatedAt: 2025-11-19T21:54:07.637251
+workspaceId: wk_vGxjUtTZ2p
+folderId: fl_4AEkvhigdF
+authentication:
+  token: ${[agoratoken]}
+authenticationType: bearer
+body: {}
+bodyType: null
+description: ''
+headers: []
+method: GET
+name: Reservas
+sortPriority: 27.0
+url: ${[url]}/api/v1/reservas
+urlParameters: []
